@@ -1,0 +1,31 @@
+#nav-color
+{
+    background-color: white;
+}
+
+.custom {
+    color: #000;
+}
+
+
+.custom:hover {
+    color: #00693E;
+}
+
+.home-about {
+    background-color: #f9f8f3;
+}
+
+#footer-custom {
+    background-color: #00693E;
+    color: #000;
+}
+
+.product-page {
+    margin: 200;
+    padding:  0 10% 0 15%;
+}
+
+.bullet-list {
+    margin: auto;
+}
