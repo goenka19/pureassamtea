@@ -11,7 +11,7 @@ const { transparent = false } = Astro.props;
   "w-full z-50",
   transparent ? "absolute top-0" : "bg-white"
 ]}>
-  {/* Desktop Header - Exact match to screenshot */}
+  <!-- Desktop Header - Exact match to screenshot -->
   <div class="hidden lg:flex items-center justify-between px-12 xl:px-20 py-4 max-w-7xl mx-auto">
     <!-- Logo -->
     <a href="/" class="flex items-center gap-3">
@@ -22,35 +22,44 @@ const { transparent = false } = Astro.props;
           class="w-full h-full object-contain"
         />
       </div>
-      <span class="text-tea-green font-bold text-sm tracking-[2px] uppercase">PUREASSAMTEA GROUP</span>
+      <span class="text-tea-green font-bold text-sm tracking-[2px] uppercase">PUREASSAMTEA</span>
     </a>
 
-    <!-- Desktop Navigation - Contact Us as green text per screenshot -->
+    <!-- Desktop Navigation - Contact Us as green button -->
     <nav class="flex items-center gap-10">
       <a href="/about" class="text-sm text-gray-900 hover:text-tea-green transition-colors">About Us</a>
       <a href="/brands" class="text-sm text-gray-900 hover:text-tea-green transition-colors">Our Brands</a>
       <a href="/portfolio" class="text-sm text-gray-900 hover:text-tea-green transition-colors">Our Portfolio</a>
-      <a href="/contact" class="text-sm text-tea-green font-semibold">Contact Us</a>
+      <a
+        href="/contact"
+        class="bg-tea-green text-white px-10 py-3 rounded-xl text-base font-medium hover:bg-tea-dark transition-colors"
+      >
+        Contact Us
+      </a>
     </nav>
   </div>
 
-  {/* Mobile Header - Get Quote button design */}
+  <!-- Mobile Header - Get Quote button design -->
   <div class="lg:hidden flex items-center justify-between px-5 py-4 border-b border-gray-100">
     <!-- Logo (shorter text for mobile) -->
     <a href="/" class="flex items-center gap-2">
-      <div class="w-9 h-11 flex items-center justify-center bg-gradient-to-br from-orange-500 to-red-600 rounded">
-        <span class="text-white font-bold text-lg">G</span>
+      <div class="w-9 h-11 flex items-center justify-center">
+        <img
+          src="/images/logo.png"
+          alt="PureAssamTea Logo"
+          class="w-full h-full object-contain"
+        />
       </div>
-      <span class="text-tea-green font-bold text-xs tracking-wide">PUREASSAMTEA</span>
+      <span class="text-tea-green font-bold text-xs tracking-[1.5px] uppercase">PUREASSAMTEA</span>
     </a>
 
     <!-- Right Side: Get Quote + Hamburger -->
     <div class="flex items-center gap-3">
       <a 
         href="/contact" 
-        class="bg-tea-green text-white px-5 py-2.5 rounded-md text-sm font-semibold"
+        class="bg-tea-green text-white px-5 py-2.5 rounded-lg text-sm font-semibold"
       >
-        Get Quote
+        Contact Us
       </a>
       
       <button 
@@ -65,7 +74,7 @@ const { transparent = false } = Astro.props;
     </div>
   </div>
 
-  {/* Mobile Navigation Menu -->
+  <!-- Mobile Navigation Menu -->
   <nav 
     id="mobile-menu" 
     class="hidden lg:hidden bg-white border-t border-gray-100 absolute w-full left-0"

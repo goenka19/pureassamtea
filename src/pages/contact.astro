@@ -18,7 +18,7 @@ const brands = [
 const businessTypes = ['Trader', 'Retailer', 'Packeter', 'Broker', 'Any other'];
 ---
 
-<Layout title="Contact Us - PureAssamTea Group">
+<Layout title="Contact Us - PureAssamTea">
   <Header />
   <main>
     <!-- MOBILE LAYOUT (hidden on desktop) -->
@@ -26,7 +26,7 @@ const businessTypes = ['Trader', 'Retailer', 'Packeter', 'Broker', 'Any other'];
       <!-- Mobile Titles Section -->
       <section class="bg-gradient-to-b from-[#1B4D3E] to-[#0d3328] py-10 px-5 text-center">
         <h1 class="text-2xl font-light text-white leading-tight mb-6">
-          Interested in doing<br/>business with us?
+          Interested In Working<br/>With Us?
         </h1>
         <h2 class="text-3xl font-normal text-white">Drop Us a Line</h2>
       </section>
@@ -163,126 +163,112 @@ const businessTypes = ['Trader', 'Retailer', 'Packeter', 'Broker', 'Any other'];
     
     <!-- DESKTOP LAYOUT (hidden on mobile) -->
     <div class="hidden lg:block">
-      <!-- Top Titles Row -->
-      <section class="grid grid-cols-2 h-[120px]">
-        <!-- Left Title -->
-        <div class="relative flex items-center justify-center bg-gradient-to-b from-black/40 to-black/70">
-          <img 
-            src="/images/tea_pot.jpg" 
-            alt="" 
-            class="absolute inset-0 w-full h-full object-cover -z-10"
-          />
-          <h2 class="text-4xl font-light text-white text-center leading-tight">
-            Interested in doing<br/>business with us?
-          </h2>
-        </div>
-        
-        <!-- Right Title -->
-        <div class="bg-[#FAFAF9] flex items-center justify-center">
-          <h2 class="text-5xl font-normal text-gray-900">Drop Us a Line</h2>
-        </div>
-      </section>
-      
       <!-- Main Content - Split Layout -->
-      <section class="grid grid-cols-2 min-h-[900px]">
-        <!-- Left Side - Image -->
-        <div class="relative">
-          <div class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/70 z-10"></div>
-          <img 
-            src="/images/tea_pot.jpg" 
-            alt="Tea Pot" 
+      <section class="grid grid-cols-2">
+        <!-- Left Side - Image + Headline -->
+        <div class="relative overflow-hidden">
+          <img
+            src="/images/tea_pot.jpg"
+            alt=""
             class="absolute inset-0 w-full h-full object-cover"
           />
+          <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/70"></div>
+          <div class="relative z-10 px-14 xl:px-20 pt-16 xl:pt-24 pb-16 xl:pb-20">
+            <h1 class="text-4xl xl:text-5xl font-light text-white tracking-tight leading-none">
+              Interested In Working With Us?
+            </h1>
+          </div>
         </div>
-        
+
         <!-- Right Side - Form -->
-        <div class="bg-[#FAFAF9] p-12">
-          <div class="max-w-lg mx-auto">
-          
-          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-4">
+        <div class="bg-white px-14 xl:px-20 pt-16 xl:pt-24 pb-16 xl:pb-20">
+          <div class="max-w-[640px]">
+            <h2 class="text-5xl xl:text-6xl font-normal text-gray-900 tracking-tight leading-none mb-10">Drop Us a Line</h2>
+
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
             <!-- Name -->
             <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+              <label class="block text-base font-medium text-gray-600 mb-1.5">Name *</label>
               <input 
                 type="text" 
                 name="name"
                 placeholder="Enter your name" 
                 required
-                class="w-full px-4 py-3 rounded shadow-md border-0 bg-white text-gray-900 placeholder-gray-400 text-sm"
+                class="w-full px-6 py-3.5 rounded-lg shadow-sm border border-gray-200 bg-white text-gray-900 placeholder-gray-400 text-[15px] focus:outline-none focus:ring-2 focus:ring-tea-green/25 focus:border-tea-green"
               />
             </div>
             
             <!-- Phone -->
             <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1">Phone *</label>
+              <label class="block text-base font-medium text-gray-600 mb-1.5">Phone *</label>
               <input 
                 type="tel" 
                 name="phone"
                 placeholder="Enter your phone number" 
                 required
-                class="w-full px-4 py-3 rounded shadow-md border-0 bg-white text-gray-900 placeholder-gray-400 text-sm"
+                class="w-full px-6 py-3.5 rounded-lg shadow-sm border border-gray-200 bg-white text-gray-900 placeholder-gray-400 text-[15px] focus:outline-none focus:ring-2 focus:ring-tea-green/25 focus:border-tea-green"
               />
             </div>
             
             <!-- Email -->
             <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+              <label class="block text-base font-medium text-gray-600 mb-1.5">Email *</label>
               <input 
                 type="email" 
                 name="email"
                 placeholder="Enter your email" 
                 required
-                class="w-full px-4 py-3 rounded shadow-md border-0 bg-white text-gray-900 placeholder-gray-400 text-sm"
+                class="w-full px-6 py-3.5 rounded-lg shadow-sm border border-gray-200 bg-white text-gray-900 placeholder-gray-400 text-[15px] focus:outline-none focus:ring-2 focus:ring-tea-green/25 focus:border-tea-green"
               />
             </div>
             
             <!-- Organization -->
             <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1">Name of the Organization *</label>
+              <label class="block text-base font-medium text-gray-600 mb-1.5">Name of the Organization *</label>
               <input 
                 type="text" 
                 name="organization"
                 placeholder="Enter organization name" 
                 required
-                class="w-full px-4 py-3 rounded shadow-md border-0 bg-white text-gray-900 placeholder-gray-400 text-sm"
+                class="w-full px-6 py-3.5 rounded-lg shadow-sm border border-gray-200 bg-white text-gray-900 placeholder-gray-400 text-[15px] focus:outline-none focus:ring-2 focus:ring-tea-green/25 focus:border-tea-green"
               />
             </div>
             
             <!-- City & State -->
             <div class="grid grid-cols-2 gap-4">
               <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">City *</label>
+                <label class="block text-base font-medium text-gray-600 mb-1.5">City *</label>
                 <input 
                   type="text" 
                   name="city"
                   placeholder="City" 
                   required
-                  class="w-full px-4 py-3 rounded shadow-md border-0 bg-white text-gray-900 placeholder-gray-400 text-sm"
+                  class="w-full px-6 py-3.5 rounded-lg shadow-sm border border-gray-200 bg-white text-gray-900 placeholder-gray-400 text-[15px] focus:outline-none focus:ring-2 focus:ring-tea-green/25 focus:border-tea-green"
                 />
               </div>
               <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">State *</label>
+                <label class="block text-base font-medium text-gray-600 mb-1.5">State *</label>
                 <input 
                   type="text" 
                   name="state"
                   placeholder="State" 
                   required
-                  class="w-full px-4 py-3 rounded shadow-md border-0 bg-white text-gray-900 placeholder-gray-400 text-sm"
+                  class="w-full px-6 py-3.5 rounded-lg shadow-sm border border-gray-200 bg-white text-gray-900 placeholder-gray-400 text-[15px] focus:outline-none focus:ring-2 focus:ring-tea-green/25 focus:border-tea-green"
                 />
               </div>
             </div>
             
             <!-- Brands Selection -->
-            <div class="bg-white p-5 rounded shadow-sm">
-              <p class="text-sm font-medium mb-3">Select the brands you are interested in *</p>
-              <div class="space-y-2">
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+              <p class="text-base font-medium mb-4">Select the brands you are interested in *</p>
+              <div class="grid grid-cols-2 gap-x-8 gap-y-3">
                 {brands.map((brand) => (
-                  <label class="flex items-center gap-2 text-sm cursor-pointer">
+                  <label class="flex items-center gap-3 text-base cursor-pointer min-h-[44px]">
                     <input 
                       type="checkbox" 
                       name="brands" 
                       value={brand}
-                      class="w-4 h-4 rounded border-gray-300"
+                      class="w-5 h-5 rounded border-2 border-gray-300"
                     />
                     <span>{brand}</span>
                   </label>
@@ -291,17 +277,17 @@ const businessTypes = ['Trader', 'Retailer', 'Packeter', 'Broker', 'Any other'];
             </div>
             
             <!-- Business Type -->
-            <div class="bg-white p-5 rounded shadow-sm">
-              <p class="text-sm font-medium mb-3">You are a *</p>
-              <div class="space-y-2">
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+              <p class="text-base font-medium mb-4">You are a *</p>
+              <div class="grid grid-cols-2 gap-x-8 gap-y-3">
                 {businessTypes.map((type) => (
-                  <label class="flex items-center gap-2 text-sm cursor-pointer">
+                  <label class="flex items-center gap-3 text-base cursor-pointer min-h-[44px]">
                     <input 
                       type="radio" 
                       name="business_type" 
                       value={type}
                       required
-                      class="w-4 h-4 border-gray-300"
+                      class="w-5 h-5 border-2 border-gray-300"
                     />
                     <span>{type}</span>
                   </label>
@@ -312,7 +298,7 @@ const businessTypes = ['Trader', 'Retailer', 'Packeter', 'Broker', 'Any other'];
             <!-- Submit Button -->
             <button 
               type="submit" 
-              class="w-full bg-tea-green text-white py-4 rounded font-semibold text-lg hover:bg-tea-dark transition-colors"
+              class="w-full bg-tea-green text-white py-6 rounded-xl font-medium text-xl hover:bg-tea-dark transition-colors text-left px-8"
             >
               Submit
             </button>
@@ -322,9 +308,9 @@ const businessTypes = ['Trader', 'Retailer', 'Packeter', 'Broker', 'Any other'];
             Note: Replace YOUR_FORM_ID in the form action with your Formspree form ID.
             Sign up at <a href="https://formspree.io" class="text-tea-green underline">formspree.io</a> to get your form ID.
           </p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </div>
   </main>
   <Footer />

@@ -14,27 +14,27 @@ const {
 ---
 
 <section class="relative h-[500px] lg:h-[600px] flex items-center overflow-hidden">
-  {/* Background - Placeholder gradient until real image */}
+  <!-- Background - Placeholder gradient until real image -->
   <div class="absolute inset-0 bg-gradient-to-br from-tea-dark via-tea-green to-tea-dark">
-    {/* When you have the hero image:
-    <img 
-      src={backgroundImage} 
-      alt="Tea Plantation" 
-      class="w-full h-full object-cover opacity-80"
-    />
-    --}
-    {/* Overlay for text readability */}
+    <!-- When you have the hero image, replace the gradient with this:
+      <img
+        src={backgroundImage}
+        alt="Tea Plantation"
+        class="w-full h-full object-cover opacity-80"
+      />
+    -->
+    <!-- Overlay for text readability -->
     <div class="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-transparent lg:from-black/40 lg:via-black/20 lg:to-transparent"></div>
   </div>
 
-  {/* Desktop Content - Exact screenshot style */}
+  <!-- Desktop Content - Exact screenshot style -->
   <div class="hidden lg:block relative z-10 w-full px-20 max-w-7xl mx-auto">
     <h1 class="text-7xl xl:text-8xl font-normal text-white leading-[0.95] tracking-tight">
       Discover<br/>A Passion
     </h1>
   </div>
 
-  {/* Mobile Content - With CTA buttons */}
+  <!-- Mobile Content - With CTA buttons -->
   <div class="lg:hidden relative z-10 w-full px-6 py-12">
     <h1 class="text-5xl font-normal text-white leading-[0.9] mb-4">
       Discover<br/>A Passion
