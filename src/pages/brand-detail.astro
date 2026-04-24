@@ -1,0 +1,249 @@
+---
+// brand-detail.astro - Brand detail page with image slideshow
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Lalkilla - Premium Tea Brand | PureAssamTea">
+  <Header />
+  
+  <main class="min-h-screen bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        
+        <!-- Left Column: Image Slideshow -->
+        <div class="space-y-6">
+          <!-- Main Image Display -->
+          <div class="relative aspect-square bg-gray-100 rounded-2xl overflow-hidden">
+            <!-- Main Image Container with SVG Placeholders -->
+            <div id="main-image-container" class="w-full h-full flex items-center justify-center">
+              <!-- Image 1: Tea Leaves Pile -->
+              <svg id="slide-0" class="slide-image w-full h-full" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid slice">
+                <rect width="800" height="800" fill="#f5f5f5"/>
+                <circle cx="400" cy="400" r="200" fill="#3d2914" opacity="0.8"/>
+                <circle cx="350" cy="380" r="20" fill="#4a3420"/>
+                <circle cx="450" cy="420" r="25" fill="#4a3420"/>
+                <circle cx="420" cy="350" r="18" fill="#4a3420"/>
+                <circle cx="380" cy="450" r="22" fill="#4a3420"/>
+              </svg>
+              <!-- Image 2: Tea Cup -->
+              <svg id="slide-1" class="slide-image w-full h-full hidden" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid slice">
+                <rect width="800" height="800" fill="#f0f0f0"/>
+                <ellipse cx="400" cy="450" rx="180" ry="120" fill="#2d5016" opacity="0.6"/>
+                <ellipse cx="400" cy="450" rx="160" ry="100" fill="#3d2914" opacity="0.8"/>
+              </svg>
+              <!-- Image 3: Tea Packaging -->
+              <svg id="slide-2" class="slide-image w-full h-full hidden" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid slice">
+                <rect width="800" height="800" fill="#fafafa"/>
+                <rect x="300" y="300" width="200" height="250" rx="10" fill="#8B4513" opacity="0.3"/>
+                <rect x="320" y="320" width="160" height="210" rx="5" fill="#3d2914" opacity="0.9"/>
+              </svg>
+              <!-- Image 4: Tea Garden -->
+              <svg id="slide-3" class="slide-image w-full h-full hidden" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid slice">
+                <rect width="800" height="800" fill="#f8f8f8"/>
+                <circle cx="400" cy="400" r="150" fill="none" stroke="#006C3F" stroke-width="20" opacity="0.3"/>
+                <circle cx="400" cy="400" r="120" fill="#3d2914" opacity="0.7"/>
+              </svg>
+            </div>
+            <!-- Navigation Arrows -->
+            <button 
+              id="prev-btn"
+              class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-colors"
+              aria-label="Previous image"
+            >
+              <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+              </svg>
+            </button>
+            <button 
+              id="next-btn"
+              class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-colors"
+              aria-label="Next image"
+            >
+              <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+          
+          <!-- Thumbnail Strip -->
+          <div class="flex gap-4 justify-center">
+            <button class="thumbnail-btn relative w-20 h-20 rounded-lg overflow-hidden border-2 border-tea-green ring-2 ring-tea-green/20 bg-gray-100" data-index="0">
+              <svg viewBox="0 0 100 100" class="w-full h-full">
+                <circle cx="50" cy="50" r="35" fill="#3d2914" opacity="0.8"/>
+              </svg>
+            </button>
+            <button class="thumbnail-btn relative w-20 h-20 rounded-lg overflow-hidden border-2 border-transparent hover:border-gray-300 transition-colors bg-gray-100" data-index="1">
+              <svg viewBox="0 0 100 100" class="w-full h-full">
+                <ellipse cx="50" cy="55" rx="35" ry="25" fill="#2d5016" opacity="0.6"/>
+              </svg>
+            </button>
+            <button class="thumbnail-btn relative w-20 h-20 rounded-lg overflow-hidden border-2 border-transparent hover:border-gray-300 transition-colors bg-gray-100" data-index="2">
+              <svg viewBox="0 0 100 100" class="w-full h-full">
+                <rect x="35" y="35" width="30" height="40" rx="3" fill="#8B4513" opacity="0.5"/>
+              </svg>
+            </button>
+            <button class="thumbnail-btn relative w-20 h-20 rounded-lg overflow-hidden border-2 border-transparent hover:border-gray-300 transition-colors bg-gray-100" data-index="3">
+              <svg viewBox="0 0 100 100" class="w-full h-full">
+                <circle cx="50" cy="50" r="30" fill="none" stroke="#006C3F" stroke-width="4"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        
+        <!-- Right Column: Brand Information -->
+        <div class="flex flex-col justify-center items-center text-center">
+          <!-- Brand Logo Placeholder - Larger space for logo -->
+          <div class="mb-8">
+            <div class="w-40 h-40 bg-tea-green/10 rounded-2xl flex items-center justify-center">
+              <span class="text-tea-green text-5xl font-bold">L</span>
+            </div>
+          </div>
+          
+          <!-- Brand Name - Reduced size -->
+          <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Lalkilla</h1>
+          
+          <!-- Description - Longer paragraphs only -->
+          <div class="prose prose-lg text-gray-600 mb-8 text-center">
+            <p class="leading-relaxed mb-4">
+              Lalkilla is a premium tea brand sourced from the finest tea gardens of Assam. Our tea leaves are hand-picked at the peak of freshness to ensure exceptional quality in every cup. The unique terroir of the Brahmaputra Valley gives our tea its distinctive malty flavor and rich amber color that tea connoisseurs around the world have come to love.
+            </p>
+            <p class="leading-relaxed">
+              Crafted using the traditional CTC (Cut, Tear, Curl) method, this tea delivers a robust and full-bodied experience. Each batch undergoes rigorous quality control to maintain consistency and excellence. The result is a tea that brews to a bright, clear liquor with a mellow aroma and a bright, refreshing flavor that lingers pleasantly on the palate.
+            </p>
+          </div>
+          
+          <!-- Product Specifications - Reduced spacing -->
+          <div class="mb-8 w-full">
+            <h2 class="text-xl font-bold text-gray-900 mb-4">Product Specifications</h2>
+            <div class="space-y-2 inline-block text-left">
+              <div class="flex items-start gap-3">
+                <span class="w-2 h-2 bg-tea-green rounded-full mt-2 flex-shrink-0"></span>
+                <div>
+                  <span class="font-semibold text-gray-900">Flush:</span>
+                  <span class="text-gray-600 ml-2">Second Flush</span>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="w-2 h-2 bg-tea-green rounded-full mt-2 flex-shrink-0"></span>
+                <div>
+                  <span class="font-semibold text-gray-900">Size/Grade:</span>
+                  <span class="text-gray-600 ml-2">BOP (Broken Orange Pekoe)</span>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="w-2 h-2 bg-tea-green rounded-full mt-2 flex-shrink-0"></span>
+                <div>
+                  <span class="font-semibold text-gray-900">Processing Type:</span>
+                  <span class="text-gray-600 ml-2">CTC (Cut, Tear, Curl)</span>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="w-2 h-2 bg-tea-green rounded-full mt-2 flex-shrink-0"></span>
+                <div>
+                  <span class="font-semibold text-gray-900">Packaging:</span>
+                  <span class="text-gray-600 ml-2">25 Kg Food grade PP Bags</span>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="w-2 h-2 bg-tea-green rounded-full mt-2 flex-shrink-0"></span>
+                <div>
+                  <span class="font-semibold text-gray-900">Origin:</span>
+                  <span class="text-gray-600 ml-2">Assam, India</span>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="w-2 h-2 bg-tea-green rounded-full mt-2 flex-shrink-0"></span>
+                <div>
+                  <span class="font-semibold text-gray-900">Best Before:</span>
+                  <span class="text-gray-600 ml-2">24 months from date of packaging</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- CTA Section -->
+          <div class="pt-6 border-t border-gray-200 w-full">
+            <p class="text-lg font-medium text-gray-900 mb-4">Interested in Buying? Get in touch with us.</p>
+            <a 
+              href="/contact" 
+              class="inline-flex items-center justify-center bg-gray-900 text-white px-10 py-4 rounded-xl text-base font-medium hover:bg-black transition-colors"
+            >
+              Contact Us
+            </a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<script>
+  // Image slideshow functionality
+  const totalSlides = 4;
+  let currentIndex = 0;
+  
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  const thumbnailBtns = document.querySelectorAll('.thumbnail-btn');
+  
+  function updateSlide(index) {
+    currentIndex = index;
+    
+    // Hide all slides
+    for (let i = 0; i < totalSlides; i++) {
+      const slide = document.getElementById(`slide-${i}`);
+      if (slide) {
+        slide.classList.add('hidden');
+      }
+    }
+    
+    // Show current slide
+    const currentSlide = document.getElementById(`slide-${index}`);
+    if (currentSlide) {
+      currentSlide.classList.remove('hidden');
+    }
+    
+    // Update thumbnail styles
+    thumbnailBtns.forEach((btn, i) => {
+      if (i === index) {
+        btn.classList.remove('border-transparent');
+        btn.classList.add('border-tea-green', 'ring-2', 'ring-tea-green/20');
+      } else {
+        btn.classList.add('border-transparent');
+        btn.classList.remove('border-tea-green', 'ring-2', 'ring-tea-green/20');
+      }
+    });
+  }
+  
+  prevBtn.addEventListener('click', () => {
+    const newIndex = currentIndex === 0 ? totalSlides - 1 : currentIndex - 1;
+    updateSlide(newIndex);
+  });
+  
+  nextBtn.addEventListener('click', () => {
+    const newIndex = currentIndex === totalSlides - 1 ? 0 : currentIndex + 1;
+    updateSlide(newIndex);
+  });
+  
+  thumbnailBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const index = parseInt(btn.dataset.index);
+      updateSlide(index);
+    });
+  });
+</script>
+
+<style>
+  /* Tea green color class for JS usage */
+  .border-tea-green {
+    border-color: #006C3F;
+  }
+  .ring-tea-green\/20 {
+    --tw-ring-color: rgb(0 108 63 / 0.2);
+  }
+</style>
