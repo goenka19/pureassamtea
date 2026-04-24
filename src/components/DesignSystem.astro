@@ -1,0 +1,301 @@
+---
+// DesignSystem.astro - Reference component for PUREASSAMTEA design system
+// Use this as a reference when building new pages
+---
+
+<!-- 
+========================================
+PUREASSAMTEA DESIGN SYSTEM
+========================================
+Botanical Minimalism Theme
+-->
+
+<!-- COLOR PALETTE -->
+<div class="hidden">
+  Primary Green:   bg-[#006C3F]  text-[#006C3F]  border-[#006C3F]
+  Dark Green:      bg-[#1B4D3E]  (hover states)
+  Light Green:     bg-[#E8F5E9]  (backgrounds)
+  White:           bg-white
+  Charcoal:        text-gray-900  (headlines)
+  Gray:            text-gray-600  (body)
+  Light Gray:      bg-gray-100    (image backgrounds)
+  Border:          border-gray-200
+</div>
+
+<!-- TYPOGRAPHY -->
+<div class="hidden">
+  Display:         text-5xl lg:text-6xl font-bold
+  H1:              text-4xl lg:text-5xl font-bold
+  H2:              text-2xl font-bold
+  Body Large:      text-lg leading-relaxed
+  Body:            text-base
+  Label:           text-sm font-semibold
+  Caption:         text-sm text-gray-600
+</div>
+
+<!-- SPACING -->
+<div class="hidden">
+  Section:         py-16 (64px vertical)
+  Container:       max-w-7xl mx-auto px-6 lg:px-12
+  Grid Gap:        gap-16 (64px)
+  Card Gap:        space-y-6
+  Tight List:      space-y-2
+  Element Gap:     gap-3, gap-4
+</div>
+
+<!-- BORDER RADIUS -->
+<div class="hidden">
+  Buttons:         rounded-xl (12px)
+  Cards/Images:    rounded-2xl (16px)
+  Thumbnails:      rounded-lg (8px)
+  Full:            rounded-full
+</div>
+
+<!-- ======================================== -->
+<!-- HEADER COMPONENT -->
+<!-- ======================================== -->
+<header class="w-full bg-white">
+  <div class="flex items-center justify-between px-12 xl:px-20 py-4 max-w-7xl mx-auto">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-3">
+      <div class="w-10 h-12">
+        <img src="/images/logo.png" alt="Logo" class="w-full h-full object-contain" />
+      </div>
+      <span class="text-[#006C3F] font-bold text-sm tracking-[2px] uppercase">PUREASSAMTEA</span>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="flex items-center gap-10">
+      <a href="/about" class="text-sm text-gray-900 hover:text-[#006C3F]">About Us</a>
+      <a href="/brands" class="text-sm text-gray-900 hover:text-[#006C3F]">Our Brands</a>
+      <a href="/portfolio" class="text-sm text-gray-900 hover:text-[#006C3F]">Our Portfolio</a>
+      <a href="/contact" class="bg-[#006C3F] text-white px-10 py-3 rounded-xl text-base font-medium hover:bg-[#1B4D3E]">
+        Contact Us
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- ======================================== -->
+<!-- TWO COLUMN LAYOUT (Brand Detail Pattern) -->
+<!-- ======================================== -->
+<main class="min-h-screen bg-white">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      
+      <!-- LEFT COLUMN: Image Slideshow -->
+      <div class="space-y-6">
+        <!-- Main Image -->
+        <div class="relative aspect-square bg-gray-100 rounded-2xl overflow-hidden">
+          <img src="/images/product.jpg" alt="Product" class="w-full h-full object-cover" />
+          
+          <!-- Navigation Arrows -->
+          <button class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 rounded-full shadow-lg hover:bg-white">
+            <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+            </svg>
+          </button>
+          <button class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 rounded-full shadow-lg hover:bg-white">
+            <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+        
+        <!-- Thumbnails -->
+        <div class="flex gap-4 justify-center">
+          <button class="w-20 h-20 rounded-lg overflow-hidden border-2 border-[#006C3F] ring-2 ring-[#006C3F]/20">
+            <img src="/images/thumb1.jpg" class="w-full h-full object-cover" />
+          </button>
+          <button class="w-20 h-20 rounded-lg overflow-hidden border-2 border-transparent hover:border-gray-300">
+            <img src="/images/thumb2.jpg" class="w-full h-full object-cover" />
+          </button>
+          <!-- Repeat for 3, 4 -->
+        </div>
+      </div>
+      
+      <!-- RIGHT COLUMN: Brand Info (CENTERED) -->
+      <div class="flex flex-col justify-center items-center text-center">
+        
+        <!-- Logo Placeholder -->
+        <div class="mb-8">
+          <div class="w-40 h-40 bg-[#E8F5E9] rounded-2xl flex items-center justify-center">
+            <span class="text-[#006C3F] text-5xl font-bold">L</span>
+          </div>
+        </div>
+        
+        <!-- Brand Name -->
+        <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Brand Name</h1>
+        
+        <!-- Description -->
+        <div class="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg">
+          <p class="mb-4">
+            Description paragraph one. Premium tea sourced from the finest gardens of Assam.
+          </p>
+          <p>
+            Description paragraph two. Crafted using traditional methods for exceptional quality.
+          </p>
+        </div>
+        
+        <!-- Product Specifications -->
+        <div class="mb-8 w-full">
+          <h2 class="text-xl font-bold text-gray-900 mb-4">Product Specifications</h2>
+          <div class="space-y-2 inline-block text-left">
+            <div class="flex items-start gap-3">
+              <span class="w-2 h-2 bg-[#006C3F] rounded-full mt-2 flex-shrink-0"></span>
+              <div>
+                <span class="font-semibold text-gray-900">Flush:</span>
+                <span class="text-gray-600 ml-2">Second Flush</span>
+              </div>
+            </div>
+            <!-- Repeat for other specs -->
+          </div>
+        </div>
+        
+        <!-- CTA -->
+        <div class="pt-6 border-t border-gray-200 w-full">
+          <p class="text-lg font-medium text-gray-900 mb-4">Interested in Buying?</p>
+          <a href="/contact" class="inline-flex bg-gray-900 text-white px-10 py-4 rounded-xl font-medium hover:bg-black">
+            Contact Us
+          </a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</main>
+
+<!-- ======================================== -->
+<!-- RELATED BRANDS SECTION -->
+<!-- ======================================== -->
+<section class="py-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <h2 class="text-2xl font-bold text-gray-900 mb-10 text-center">Related Brands</h2>
+    
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <!-- Brand Card -->
+      <a href="/brand/other-brand" class="group">
+        <div class="bg-white rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
+          <div class="w-20 h-20 bg-[#E8F5E9] rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <span class="text-[#006C3F] text-3xl font-bold">B</span>
+          </div>
+          <h3 class="font-semibold text-gray-900 group-hover:text-[#006C3F]">Brand Name</h3>
+        </div>
+      </a>
+      <!-- Repeat for other brands -->
+    </div>
+  </div>
+</section>
+
+<!-- ======================================== -->
+<!-- FOOTER COMPONENT -->
+<!-- ======================================== -->
+<footer class="bg-[#006C3F] text-white">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      
+      <!-- Company Info -->
+      <div>
+        <h3 class="font-bold text-lg tracking-wider mb-2">PUREASSAMTEA</h3>
+        <p class="text-white/80 text-sm mb-4">Discover A Passion</p>
+        <div class="flex gap-3">
+          <a href="#" class="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 text-sm font-bold">
+            f
+          </a>
+        </div>
+      </div>
+      
+      <!-- Contact Info -->
+      <div>
+        <h4 class="font-semibold mb-4">Reach Us</h4>
+        <div class="space-y-2 text-sm text-white/80">
+          <p>📞 (0373) 2300413 / 2300196</p>
+          <p>✉️ contact@pureassamtea.com</p>
+        </div>
+      </div>
+      
+      <!-- Quick Links -->
+      <div>
+        <h4 class="font-semibold mb-4">Helpful Links</h4>
+        <div class="space-y-2 text-sm">
+          <a href="#" class="block text-white/80 hover:text-white">Employee Login</a>
+          <a href="#" class="block text-white/80 hover:text-white">Job Applications</a>
+          <a href="#" class="block text-white/80 hover:text-white">Policies</a>
+        </div>
+      </div>
+      
+      <!-- Newsletter -->
+      <div>
+        <h4 class="font-semibold mb-4">Subscribe To Stay Updated</h4>
+        <form class="space-y-2">
+          <input type="email" placeholder="Email*" class="w-full px-4 py-3 rounded bg-white text-gray-900 text-sm" />
+          <button type="submit" class="w-full bg-black text-white px-4 py-3 rounded text-sm font-medium hover:bg-gray-900">
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="border-t border-white/20 mt-12 pt-8 text-center text-sm text-white/60">
+      <p>Copyright © 2026 PureAssamTea</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ======================================== -->
+<!-- BUTTON VARIANTS -->
+<!-- ======================================== -->
+
+<!-- Primary Green Button -->
+<button class="bg-[#006C3F] text-white px-10 py-3 rounded-xl font-medium hover:bg-[#1B4D3E] transition-colors">
+  Contact Us
+</button>
+
+<!-- Dark Button -->
+<button class="bg-gray-900 text-white px-10 py-4 rounded-xl font-medium hover:bg-black transition-colors">
+  Contact Us
+</button>
+
+<!-- Outline Button -->
+<button class="border-2 border-[#006C3F] text-[#006C3F] px-8 py-3 rounded-xl font-medium hover:bg-[#006C3F] hover:text-white transition-colors">
+  Learn More
+</button>
+
+<!-- ======================================== -->
+<!-- UTILITY CLASSES REFERENCE -->
+<!-- ======================================== -->
+
+<!-- 
+Use these patterns consistently:
+
+CONTAINERS:
+- max-w-7xl mx-auto px-6 lg:px-12
+
+SECTIONS:
+- py-16 for major sections
+- gap-16 for grid gaps
+
+CARDS:
+- bg-white rounded-2xl p-8
+- hover:shadow-lg transition-shadow
+
+TEXT:
+- text-gray-900 for headings
+- text-gray-600 for body/description
+- text-white/80 for footer secondary text
+
+SPECS LIST:
+- flex items-start gap-3
+- w-2 h-2 bg-[#006C3F] rounded-full mt-2 (bullet)
+- space-y-2 for tight spacing
+
+IMAGES:
+- aspect-square for 1:1 ratio
+- object-cover to fill container
+- bg-gray-100 for placeholder background
+
+THUMBNAILS:
+- w-20 h-20 rounded-lg
+- border-2 border-[#006C3F] for active
+- border-2 border-transparent for inactive
+-->
