@@ -1,100 +1,92 @@
 ---
-// Header.astro - Exact match to screenshot with green Contact Us button
-interface Props {
-  transparent?: boolean;
-}
-
-const { transparent = false } = Astro.props;
+const navLinks = [
+  { label: 'About Us',   href: '/about' },
+  { label: 'Our Brands', href: '/brands' },
+];
 ---
 
-<header class:list={[
-  "w-full z-50",
-  transparent ? "absolute top-0" : "bg-white"
-]}>
-  <!-- Desktop Header - Exact match to screenshot -->
-  <div class="hidden lg:flex items-center justify-between px-12 xl:px-20 py-4 max-w-7xl mx-auto">
-    <!-- Logo -->
-    <a href="/" class="flex items-center gap-3">
-      <div class="w-10 h-12 flex items-center justify-center">
-        <img 
-          src="/images/logo.png" 
-          alt="PureAssamTea Logo" 
-          class="w-full h-full object-contain"
-        />
-      </div>
-      <span class="text-tea-green font-bold text-sm tracking-[2px] uppercase">PUREASSAMTEA</span>
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 h-[80px] bg-white border-b border-[#F0F0EE] transition-all duration-200">
+  <div class="max-w-[1200px] mx-auto h-full px-8 flex items-center justify-between gap-8">
+
+    <!-- Wordmark -->
+    <a href="/" class="flex items-center gap-1 shrink-0 no-underline">
+      <img
+        src="/images/goenka-logo.png"
+        alt="Pureassamtea"
+        height="34"
+        width="34"
+        class="h-[34px] w-auto"
+        decoding="async"
+      />
+      <span class="-ml-3 text-tea-green font-bold text-sm tracking-[2px] uppercase leading-none">PUREASSAMTEA</span>
     </a>
 
-    <!-- Desktop Navigation - Contact Us as green button -->
-    <nav class="flex items-center gap-10">
-      <a href="/about" class="text-sm text-gray-900 hover:text-tea-green transition-colors">About Us</a>
-      <a href="/brands" class="text-sm text-gray-900 hover:text-tea-green transition-colors">Our Brands</a>
-      <a href="/portfolio" class="text-sm text-gray-900 hover:text-tea-green transition-colors">Our Portfolio</a>
-      <a
-        href="/contact"
-        class="bg-tea-green text-white px-10 py-3 rounded-xl text-base font-medium hover:bg-tea-dark transition-colors"
-      >
+    <!-- Desktop nav -->
+    <nav class="hidden pat:hidden md:flex items-center gap-9">
+      {navLinks.map(l => (
+        <a href={l.href} class="text-[14px] font-medium text-ink hover:text-tea-green transition-colors duration-150 no-underline">{l.label}</a>
+      ))}
+      <a href="/contact" class="inline-flex items-center gap-2 bg-tea-green text-white text-[14px] font-medium px-[22px] py-[10px] rounded-lg hover:bg-[#005530] transition-colors duration-150 no-underline">
         Contact Us
       </a>
     </nav>
-  </div>
 
-  <!-- Mobile Header - Get Quote button design -->
-  <div class="lg:hidden flex items-center justify-between px-5 py-4 border-b border-gray-100">
-    <!-- Logo (shorter text for mobile) -->
-    <a href="/" class="flex items-center gap-2">
-      <div class="w-9 h-11 flex items-center justify-center">
-        <img
-          src="/images/logo.png"
-          alt="PureAssamTea Logo"
-          class="w-full h-full object-contain"
-        />
-      </div>
-      <span class="text-tea-green font-bold text-xs tracking-[1.5px] uppercase">PUREASSAMTEA</span>
-    </a>
-
-    <!-- Right Side: Get Quote + Hamburger -->
-    <div class="flex items-center gap-3">
-      <a 
-        href="/contact" 
-        class="bg-tea-green text-white px-5 py-2.5 rounded-lg text-sm font-semibold"
-      >
+    <!-- Mobile: Contact Us + hamburger -->
+    <div class="flex items-center gap-3 md:hidden">
+      <a href="/contact" class="bg-tea-green text-white text-[13px] font-semibold px-3 py-2 rounded-lg no-underline whitespace-nowrap">
         Contact Us
       </a>
-      
-      <button 
-        id="menu-toggle"
-        class="p-2 text-gray-800"
-        aria-label="Toggle menu"
+      <button
+        id="hamburger"
+        class="p-2 text-ink"
+        aria-label="Open menu"
+        aria-expanded="false"
       >
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
         </svg>
       </button>
     </div>
+
   </div>
 
-  <!-- Mobile Navigation Menu -->
-  <nav 
-    id="mobile-menu" 
-    class="hidden lg:hidden bg-white border-t border-gray-100 absolute w-full left-0"
+  <!-- Mobile dropdown -->
+  <nav
+    id="mobile-menu"
+    class="hidden md:hidden absolute top-[80px] left-0 right-0 bg-white border-b border-[#F0F0EE] shadow-md"
   >
-    <div class="flex flex-col">
-      <a href="/about" class="px-6 py-4 text-gray-800 border-b border-gray-50 font-medium">About Us</a>
-      <a href="/brands" class="px-6 py-4 text-gray-800 border-b border-gray-50 font-medium">Our Brands</a>
-      <a href="/portfolio" class="px-6 py-4 text-gray-800 border-b border-gray-50 font-medium">Our Portfolio</a>
-      <a href="/contact" class="px-6 py-4 text-tea-green font-medium">Contact Us</a>
+    <div class="flex">
+      <a href="/about"  class="flex-1 py-4 text-[15px] font-medium text-ink text-center border-r border-[#F0F0EE] no-underline hover:text-tea-green">About Us</a>
+      <a href="/brands" class="flex-1 py-4 text-[15px] font-medium text-ink text-center no-underline hover:text-tea-green">Our Brands</a>
     </div>
   </nav>
 </header>
 
+<!-- Spacer so content starts below fixed header -->
+<div class="h-[80px]"></div>
+
 <script>
-  const menuToggle = document.getElementById('menu-toggle');
+  const header = document.getElementById('site-header');
+  const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
-  
-  if (menuToggle && mobileMenu) {
-    menuToggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  }
+
+  // Scroll: add blur backdrop
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+      header?.classList.add('bg-white/90', 'backdrop-blur-md');
+      header?.classList.remove('bg-white');
+    } else {
+      header?.classList.remove('bg-white/90', 'backdrop-blur-md');
+      header?.classList.add('bg-white');
+    }
+  }, { passive: true });
+
+  // Hamburger toggle
+  hamburger?.addEventListener('click', () => {
+    const isOpen = !mobileMenu?.classList.contains('hidden');
+    mobileMenu?.classList.toggle('hidden');
+    hamburger.setAttribute('aria-expanded', String(!isOpen));
+  });
 </script>

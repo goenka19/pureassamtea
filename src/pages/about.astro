@@ -1,0 +1,123 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="About Us — Pureassamtea">
+  <Header />
+
+  <main>
+
+    <!-- HERO -->
+    <section class="bg-white pt-[120px] pb-20 pat:pt-16 pat:pb-12">
+      <div class="max-w-[920px] mx-auto px-8 text-center">
+        <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-tea-green mb-3">About Us</p>
+        <h1 class="text-[clamp(40px,5vw,64px)] font-bold tracking-tight leading-[1.1] text-ink mb-6">
+          Family-owned, four generations and counting.
+        </h1>
+        <p class="text-[20px] leading-[1.7] text-ink-2 max-w-[720px] mx-auto pat:text-[17px]">
+          From a single garden in 1954 to one of India's premier tea producers — the story of the Goenka Family Group is the story of unrelenting family support, independent thinking, and patient growth.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- FULL-BLEED IMAGE -->
+    <section>
+      <img
+        src="/images/tea-garden-hero.jpg"
+        alt="Assam tea garden"
+        class="w-full h-[480px] object-cover pat:h-[280px]"
+        width="1440"
+        height="480"
+        loading="lazy"
+        decoding="async"
+      />
+    </section>
+
+
+    <!-- MAIN STORY -->
+    <section class="bg-white py-24 pat:py-16">
+      <div class="max-w-[1200px] mx-auto px-8">
+        <div class="grid grid-cols-[1fr_2fr] gap-20 pat:grid-cols-1 pat:gap-8">
+
+          <!-- Left: label -->
+          <div>
+            <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-tea-green mb-3">Heritage</p>
+            <h2 class="text-[32px] font-bold tracking-tight leading-tight text-ink">1954 — Today</h2>
+          </div>
+
+          <!-- Right: paragraphs -->
+          <div class="max-w-[640px]">
+            <p class="text-[18px] leading-[1.7] text-ink-2 mb-5">
+              We are family-owned and operated, four generations and counting. Family provides unrelenting support and our independence lets us forge our path and write our own rules. Founded by Late Khetsi Das Agarwalla in 1954 against all odds, the Goenka Family Group have since grown to become one of India's premier tea producers.
+            </p>
+            <p class="text-[16px] leading-[1.7] text-ink-2 mb-5">
+              With a presence in both CTC and Orthodox tea and by producing 20 million kilos of tea spread across 16 factories and gardens we are one of the largest non-corporate tea producing families in India.
+            </p>
+            <p class="text-[16px] leading-[1.7] text-ink-2 mb-5">
+              The Pureassamtea Group is an offshoot of the Goenka Family Group which produces upwards of 2.7 million kilograms of CTC tea annually. We are still a family business, committed to providing high-quality tea to all our customers and have developed enduring relationships with our employees, business partners, and customers in a way which we pride ourselves on.
+            </p>
+            <p class="text-[16px] leading-[1.7] text-ink-2">
+              Late Khetsi Das Agarwalla was succeeded by his son Shri Radheshyam Agarwalla who passed it on to the current head of the group Mr. Sandeep Goenka.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- TIMELINE — cream background -->
+    <section class="bg-cream py-20 pat:py-14">
+      <div class="max-w-[1200px] mx-auto px-8">
+        <div class="text-center mb-16 pat:mb-10">
+          <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-tea-green mb-3">Lineage</p>
+          <h2 class="text-[clamp(32px,4vw,48px)] font-bold tracking-tight leading-[1.1] text-ink">
+            Four generations of stewardship
+          </h2>
+        </div>
+        <div class="grid grid-cols-4 gap-6 pat:grid-cols-2 pat:gap-4 max-[480px]:grid-cols-1">
+          {[
+            { era: 'First Gen · 1954',   name: 'Late Khetsi Das Agarwalla',    role: 'Founder. Built the first garden against all odds.' },
+            { era: 'Second Gen',          name: 'Shri Radheshyam Agarwalla',   role: 'Expanded into CTC processing across Upper Assam.' },
+            { era: 'Third Gen · Today',   name: 'Mr. Sandeep Goenka',          role: 'Current head. Oversees 16 factories and 8 wholesale brands.' },
+            { era: 'Fourth Gen',          name: 'The next chapter',             role: 'Carrying the family standard forward.' },
+          ].map(p => (
+            <div class="bg-white rounded-xl border border-[#F0F0EE] p-6">
+              <p class="text-[11px] font-semibold tracking-[0.08em] uppercase text-tea-green mb-3">{p.era}</p>
+              <h3 class="text-[18px] font-semibold leading-snug text-ink mb-2">{p.name}</h3>
+              <p class="text-[14px] leading-relaxed text-ink-3">{p.role}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CTA -->
+    <section class="bg-white py-24 pat:py-16 text-center">
+      <div class="max-w-[680px] mx-auto px-8">
+        <h2 class="text-[clamp(32px,4vw,48px)] font-bold tracking-tight leading-[1.1] text-ink mb-4">
+          Ready to source from us?
+        </h2>
+        <p class="text-[18px] leading-[1.7] text-ink-2 mb-8">
+          Whether you are a broker, a packager, or a wholesale buyer — we would be glad to discuss your requirements.
+        </p>
+        <div class="flex gap-3 justify-center flex-wrap">
+          <a href="/contact" class="inline-flex items-center gap-2 bg-tea-green text-white text-[14px] font-medium px-7 py-[14px] rounded-lg hover:bg-[#005530] transition-colors duration-150 no-underline">
+            Contact Us
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/brands" class="inline-flex items-center bg-transparent text-ink text-[14px] font-medium px-7 py-[14px] rounded-lg border border-line hover:border-ink transition-colors duration-150 no-underline">
+            View Brands
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>

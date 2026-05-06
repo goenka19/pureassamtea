@@ -1,61 +1,67 @@
 ---
-// Footer.astro - Green footer as per screenshot
 ---
 
 <footer class="bg-tea-green text-white">
-  <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-      <!-- Company Info -->
+  <div class="max-w-[1200px] mx-auto px-8 pt-16 pb-0 pat:pt-8">
+
+    <!-- 3-col grid -->
+    <div class="grid grid-cols-[1.5fr_1fr_1fr] gap-12 pb-12 border-b border-white/10
+                pat:grid-cols-2 pat:gap-6 pat:pb-8
+                mob:grid-cols-2 mob:gap-x-6 mob:gap-y-8 mob:pb-6">
+
+      <!-- Col 1: Wordmark — full width on mobile, centered -->
+      <div class="mob:col-span-2">
+        <div class="flex items-center gap-1 mob:justify-center">
+          <img
+            src="/images/goenka-logo.png"
+            alt="Pureassamtea"
+            height="40"
+            width="40"
+            class="h-10 w-auto brightness-0 invert"
+            decoding="async"
+          />
+          <span class="-ml-3 font-bold text-[15px] tracking-[2px] uppercase text-white">PUREASSAMTEA</span>
+        </div>
+      </div>
+
+      <!-- Col 2: Company -->
       <div>
-        <h3 class="font-bold text-lg tracking-wider mb-2">PUREASSAMTEA</h3>
-        <p class="text-white/80 text-sm mb-4">Discover A Passion</p>
+        <h6 class="text-[11px] font-semibold tracking-[0.1em] uppercase text-[#A8DCC2] mb-4">Company</h6>
+        <nav class="flex flex-col gap-2">
+          <a href="/about" class="text-[14px] text-white/80 hover:text-white transition-colors duration-150 no-underline">About Us</a>
+          <a href="/brands" class="text-[14px] text-white/80 hover:text-white transition-colors duration-150 no-underline">Our Brands</a>
+          <a href="/faqs" class="text-[14px] text-white/80 hover:text-white transition-colors duration-150 no-underline">FAQs</a>
+          <a href="/contact" class="text-[14px] text-white/80 hover:text-white transition-colors duration-150 no-underline">Contact Us</a>
+        </nav>
+      </div>
+
+      <!-- Col 3: Contact + social icons -->
+      <div>
+        <h6 class="text-[11px] font-semibold tracking-[0.1em] uppercase text-[#A8DCC2] mb-4">Contact</h6>
+        <!-- Social icons -->
         <div class="flex gap-3">
-          <a href="#" class="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors text-sm font-bold">
-            f
+          <!-- Facebook -->
+          <a href="#" aria-label="Facebook" class="w-9 h-9 border border-white/25 rounded-full flex items-center justify-center text-white/80 hover:bg-white hover:text-tea-green hover:border-white transition-all duration-150">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M22.68 0H1.32C.59 0 0 .57 0 1.28v21.44C0 23.43.59 24 1.32 24h11.5v-9.29H9.69v-3.62h3.13V8.41c0-3.1 1.9-4.79 4.66-4.79 1.32 0 2.46.1 2.79.14v3.24h-1.92c-1.5 0-1.79.71-1.79 1.76v2.31h3.59l-.47 3.62h-3.12V24h6.12c.73 0 1.32-.57 1.32-1.28V1.28C24 .57 23.41 0 22.68 0Z"/>
+            </svg>
+          </a>
+          <!-- Mail -->
+          <a href="mailto:contact@pureassamtea.com" aria-label="Email" class="w-9 h-9 border border-white/25 rounded-full flex items-center justify-center text-white/80 hover:bg-white hover:text-tea-green hover:border-white transition-all duration-150">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
           </a>
         </div>
       </div>
-      
-      <!-- Contact Info -->
-      <div>
-        <h4 class="font-semibold mb-4">Reach Us</h4>
-        <div class="space-y-2 text-sm text-white/80">
-          <p>📞 (0373) 2300413 / 2300196</p>
-          <p>✉️ contact@pureassamtea.com</p>
-        </div>
-      </div>
-      
-      <!-- Quick Links -->
-      <div>
-        <h4 class="font-semibold mb-4">Helpful Links</h4>
-        <div class="space-y-2 text-sm">
-          <a href="#" class="block text-white/80 hover:text-white transition-colors">Employee Login</a>
-          <a href="#" class="block text-white/80 hover:text-white transition-colors">Job Applications</a>
-          <a href="#" class="block text-white/80 hover:text-white transition-colors">Policies</a>
-        </div>
-      </div>
-      
-      <!-- Newsletter -->
-      <div>
-        <h4 class="font-semibold mb-4">Subscribe To Stay Updated</h4>
-        <form class="space-y-2">
-          <input 
-            type="email" 
-            placeholder="Email*" 
-            class="w-full px-4 py-3 rounded bg-white text-gray-900 text-sm"
-          />
-          <button 
-            type="submit" 
-            class="w-full bg-black text-white px-4 py-3 rounded text-sm font-medium hover:bg-gray-900 transition-colors"
-          >
-            Subscribe
-          </button>
-        </form>
-      </div>
+
     </div>
-    
-    <div class="border-t border-white/20 mt-12 pt-8 text-center text-sm text-white/60">
-      <p>Copyright © 2026 PureAssamTea</p>
+
+    <!-- Bottom bar -->
+    <div class="py-6 text-[12px] text-white/50 text-center">
+      <span>© 2026 Pureassamtea. All rights reserved.</span>
     </div>
+
   </div>
 </footer>

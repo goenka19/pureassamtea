@@ -1,18 +1,236 @@
 ---
-// index.astro - Homepage (matches Paper exactly)
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
-import Hero from '../components/Hero.astro';
 import Footer from '../components/Footer.astro';
+import { BRANDS } from '../data/brands';
 ---
 
-<Layout title="PureAssamTea - Premium Tea Manufacturing">
+<Layout title="Pureassamtea — Premium B2B Tea Manufacturing">
   <Header />
+
   <main>
-    <Hero 
-      title="Discover A Passion"
-      subtitle="Premium Tea Manufacturing for B2B Partners. Wholesale supply since 1954."
-    />
+
+    <!-- ================================================================
+         HERO — split: text left, image right
+    ================================================================ -->
+    <section class="relative overflow-hidden bg-white" style="background-image: radial-gradient(circle at 1px 1px, rgba(14,14,14,0.04) 1px, transparent 0); background-size: 22px 22px;">
+      <!-- Green circle decorative blob -->
+      <div class="absolute top-[-160px] right-[-160px] w-[480px] h-[480px] rounded-full bg-tea-light opacity-40 pointer-events-none" aria-hidden="true"></div>
+
+      <div class="relative z-10 max-w-[1200px] mx-auto px-8 py-16 pat:py-10">
+        <div class="grid grid-cols-[1.05fr_1fr] gap-[72px] items-center pat:grid-cols-1 pat:gap-12">
+
+          <!-- LEFT: Text -->
+          <div>
+            <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-tea-green mb-3">Established 1954 · Tinsukia, Assam</p>
+            <h1 class="text-[clamp(40px,4.5vw,60px)] font-bold tracking-tight leading-[1.1] text-ink mt-3 mb-5">
+              Tea from the gardens of Upper Assam, four generations on.
+            </h1>
+            <p class="text-[18px] leading-[1.7] text-ink-2 max-w-[520px] mb-8">
+              Family-owned, family-run. Eight wholesale brands of CTC and Orthodox tea, produced across sixteen factories and gardens. Trusted by brokers and buyers across India and beyond.
+            </p>
+            <div class="flex flex-wrap gap-3 mb-12">
+              <a href="/brands" class="inline-flex items-center gap-2 bg-tea-green text-white text-[14px] font-medium px-7 py-[14px] rounded-lg hover:bg-[#005530] transition-colors duration-150 no-underline">
+                Explore Our Brands
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="/contact" class="inline-flex items-center gap-2 bg-transparent text-ink text-[14px] font-medium px-7 py-[14px] rounded-lg border border-line hover:border-ink transition-colors duration-150 no-underline">
+                Wholesale Enquiry
+              </a>
+            </div>
+            <!-- Stats row — desktop only; mobile version is below the image -->
+            <div class="grid grid-cols-3 gap-12 pt-8 border-t border-line max-w-[520px] pat:hidden">
+              <div>
+                <strong class="block text-[34px] font-bold tracking-tight text-tea-green leading-none">2.7M</strong>
+                <span class="block text-[13px] text-ink-3 mt-2 leading-snug">Annual CTC output</span>
+              </div>
+              <div>
+                <strong class="block text-[34px] font-bold tracking-tight text-tea-green leading-none">16</strong>
+                <span class="block text-[13px] text-ink-3 mt-2 leading-snug">Factories &amp; gardens</span>
+              </div>
+              <div>
+                <strong class="block text-[34px] font-bold tracking-tight text-tea-green leading-none">20+</strong>
+                <span class="block text-[13px] text-ink-3 mt-2 leading-snug">Export markets</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Image + badge -->
+          <div class="relative aspect-[4/5] max-h-[560px] pat:aspect-[4/3] pat:max-h-none">
+            <div class="w-full h-full rounded-2xl overflow-hidden shadow-[0_24px_64px_rgba(14,14,14,0.12)]">
+              <img
+                src="/images/tea-garden-hero.jpg"
+                alt="Assam tea garden"
+                class="w-full h-full object-cover"
+                width="600"
+                height="750"
+              />
+            </div>
+            <!-- Floating badge -->
+            <div class="absolute left-[-28px] bottom-8 bg-white rounded-xl px-6 py-5 shadow-[0_8px_24px_rgba(14,14,14,0.10)] border border-[#F0F0EE] min-w-[200px]
+                        pat:left-4 pat:bottom-4 pat:px-4 pat:py-4 pat:min-w-0">
+              <div class="flex items-start text-[48px] font-bold text-tea-green tracking-tight leading-none pat:text-[36px]">
+                70<span class="text-[24px] mt-1.5 pat:text-[18px]">+</span>
+              </div>
+              <div class="text-[12px] text-ink-2 leading-snug mt-1.5 uppercase font-medium tracking-wide">Years of family tea craft</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Stats row — mobile only, below the image -->
+      <div class="hidden pat:grid grid-cols-3 gap-6 px-8 pt-8 pb-2 border-t border-line mx-auto max-w-[1200px]">
+        <div>
+          <strong class="block text-[28px] font-bold tracking-tight text-tea-green leading-none">2.7M</strong>
+          <span class="block text-[12px] text-ink-3 mt-1.5 leading-snug">Annual CTC output</span>
+        </div>
+        <div>
+          <strong class="block text-[28px] font-bold tracking-tight text-tea-green leading-none">16</strong>
+          <span class="block text-[12px] text-ink-3 mt-1.5 leading-snug">Factories &amp; gardens</span>
+        </div>
+        <div>
+          <strong class="block text-[28px] font-bold tracking-tight text-tea-green leading-none">20+</strong>
+          <span class="block text-[12px] text-ink-3 mt-1.5 leading-snug">Export markets</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         ABOUT BAND — cream background
+    ================================================================ -->
+    <section class="bg-cream py-24 pat:py-16">
+      <div class="max-w-[1200px] mx-auto px-8">
+        <div class="grid grid-cols-2 gap-20 items-center pat:grid-cols-1 pat:gap-8">
+
+          <!-- Text -->
+          <div class="max-w-[520px]">
+            <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-tea-green mb-3">About Us</p>
+            <h2 class="text-[clamp(32px,4vw,48px)] font-bold tracking-tight leading-[1.1] text-ink mb-6">
+              A family business, four generations and counting.
+            </h2>
+            <p class="text-[16px] leading-[1.7] text-ink-2 mb-4 text-justify">
+              We are family-owned and operated, four generations and counting. Family provides unrelenting support and our independence lets us forge our path and write our own rules. Founded by Late Khetsi Das Agarwalla in 1954 against all odds, the Goenka Family Group have since grown to become one of India's premier tea producers.
+            </p>
+            <p class="text-[16px] leading-[1.7] text-ink-2 mb-6 text-justify">
+              With a presence in both CTC and Orthodox tea and by producing 20 million kilos of tea spread across 16 factories and gardens, we are one of the largest non-corporate tea producing families in India.
+            </p>
+            <a href="/about" class="inline-flex items-center gap-2 bg-ink text-white text-[14px] font-medium px-7 py-[14px] rounded-lg hover:bg-tea-dark transition-colors duration-150 no-underline">
+              Read More
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <!-- Image -->
+          <div class="aspect-square rounded-lg overflow-hidden pat:aspect-[16/10]">
+            <img
+              src="/images/tea-pot.jpg"
+              alt="Tea pot"
+              class="w-full h-full object-cover"
+              width="600"
+              height="600"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         STATS BAND — textured white
+    ================================================================ -->
+    <section class="py-20 pat:py-14" style="background-color: #ffffff; background-image: radial-gradient(circle at 1px 1px, rgba(14,14,14,0.04) 1px, transparent 0); background-size: 22px 22px;">
+      <div class="max-w-[1200px] mx-auto px-8">
+        <div class="grid grid-cols-4 gap-8 pat:grid-cols-2 pat:gap-6">
+          {[
+            { num: '1954',  label: 'Founded by Late Khetsi Das Agarwalla' },
+            { num: '2.7M',  label: 'Kilograms of CTC tea produced annually' },
+            { num: '16',    label: 'Factories and gardens across Assam' },
+            { num: '8',     label: 'Wholesale brands under one family' },
+          ].map(s => (
+            <div>
+              <div class="text-[56px] font-bold tracking-tight leading-none text-tea-green mb-2 pat:text-[40px]">{s.num}</div>
+              <div class="text-[14px] text-ink-3 leading-snug">{s.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         BRANDS GRID — cream background
+    ================================================================ -->
+    <section class="bg-cream pt-16 pb-24 pat:pt-12 pat:pb-16">
+      <div class="max-w-[1200px] mx-auto px-8">
+
+        <!-- Header -->
+        <div class="text-center mb-16 pat:mb-10">
+          <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-tea-green mb-3">Our Brands</p>
+          <h2 class="text-[clamp(32px,4vw,48px)] font-bold tracking-tight leading-[1.1] text-ink mb-4">
+            Eight names, one standard of quality.
+          </h2>
+          <p class="text-[18px] leading-[1.7] text-ink-2 max-w-[640px] mx-auto">
+            Each brand serves a different segment of the wholesale market — from everyday CTC granules to garden-fresh premium leaf.
+          </p>
+        </div>
+
+        <!-- Grid -->
+        <div class="grid grid-cols-4 gap-5 pat:grid-cols-2 pat:gap-3.5">
+          {BRANDS.map(b => (
+            <a
+              href={`/brands/${b.id}`}
+              class="group bg-white border border-[#F0F0EE] rounded-xl px-5 py-8 flex flex-col items-center gap-3.5 no-underline transition-all duration-200 shadow-[0_1px_2px_rgba(14,14,14,0.03)] hover:shadow-[0_8px_24px_rgba(14,14,14,0.08)] hover:-translate-y-0.5"
+            >
+              <div class="h-[150px] flex items-center justify-center w-full pat:h-20">
+                <img
+                  src={b.logo}
+                  alt={b.name}
+                  class="max-h-[150px] max-w-full w-auto object-contain scale-[1.18] pat:max-h-[80px]"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="text-[16px] font-semibold text-ink group-hover:text-tea-green transition-colors duration-150">{b.name}</div>
+              <div class="text-[12px] text-ink-3 uppercase tracking-wide font-medium">{b.maker}</div>
+            </a>
+          ))}
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center mt-12">
+          <a href="/brands" class="inline-flex items-center gap-2 bg-ink text-white text-[14px] font-medium px-7 py-[14px] rounded-lg hover:bg-tea-dark transition-colors duration-150 no-underline">
+            View All Brands
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         CTA BAND — textured white
+    ================================================================ -->
+    <section class="py-20 pat:py-14 text-center" style="background-color: #ffffff; background-image: radial-gradient(circle at 1px 1px, rgba(14,14,14,0.04) 1px, transparent 0); background-size: 22px 22px;">
+      <div class="max-w-[720px] mx-auto px-8">
+        <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-tea-green mb-3">Wholesale &amp; Broker Enquiries</p>
+        <h2 class="text-[clamp(32px,4vw,48px)] font-bold tracking-tight leading-[1.1] text-ink mb-4">Interested in buying?</h2>
+        <p class="text-[18px] leading-[1.7] text-ink-2 mb-8">
+          Send us your requirements — brands, quantity, packaging — and our team will respond within two working days with availability and pricing.
+        </p>
+        <a href="/contact" class="inline-flex items-center gap-2 bg-tea-green text-white text-[14px] font-medium px-7 py-[14px] rounded-lg hover:bg-[#005530] transition-colors duration-150 no-underline">
+          Get in Touch
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </section>
+
   </main>
+
   <Footer />
 </Layout>

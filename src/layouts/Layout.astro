@@ -8,13 +8,13 @@ interface Props {
 import "../styles/global.css";
 
 const { 
-  title = "PureAssamTea - Premium Tea Manufacturing",
+  title = "Pureassamtea - Premium Tea Manufacturing",
   description = "Leading B2B tea manufacturer since 1954. Wholesale supply of premium Assam tea, custom blends, and private labeling services."
 } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="overflow-x-hidden">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,7 +25,7 @@ const {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="font-sans antialiased bg-white text-gray-900">
+<body class="font-sans antialiased bg-white text-ink overflow-x-hidden">
   <slot />
 </body>
 </html>

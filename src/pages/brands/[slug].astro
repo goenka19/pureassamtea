@@ -1,0 +1,250 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { BRANDS } from '../../data/brands';
+import type { Brand } from '../../data/brands';
+
+export function getStaticPaths() {
+  return BRANDS.map(b => ({
+    params: { slug: b.id },
+    props:  { brand: b },
+  }));
+}
+
+interface Props { brand: Brand; }
+const { brand } = Astro.props;
+
+const slides = [
+  '/images/tea-garden-hero.jpg',
+  '/images/garden-placeholder.jpg',
+  '/images/tea-garden-hero.jpg',
+  '/images/garden-placeholder.jpg',
+];
+
+const specs = [
+  { label: 'Form',             value: 'Granules / Powder' },
+  { label: 'Processing Type',  value: 'CTC (Cut, Tear, Curl)' },
+  { label: 'Packaging Size',   value: '25 Kg' },
+  { label: 'Packaging Type',   value: 'Food grade PP Bags' },
+  { label: 'Origin',           value: 'Upper Assam, India' },
+];
+
+const idx = BRANDS.findIndex(b => b.id === brand.id);
+const otherBrands = Array.from({ length: 4 }, (_, i) => BRANDS[(idx + i + 1) % BRANDS.length]);
+---
+
+<Layout title={`${brand.name} — Pureassamtea`}>
+  <Header />
+
+  <main class="bg-cream">
+
+    <section class="pt-12 pb-24 pat:pt-8 pat:pb-16">
+      <div class="max-w-[1200px] mx-auto px-8">
+
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 text-[13px] text-ink-3 mb-8" aria-label="Breadcrumb">
+          <a href="/" class="text-ink-2 hover:text-tea-green no-underline transition-colors">Home</a>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+          <a href="/brands" class="text-ink-2 hover:text-tea-green no-underline transition-colors">Our Brands</a>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+          <span class="text-ink">{brand.name}</span>
+        </nav>
+
+        <!-- 2-col layout -->
+        <div class="grid grid-cols-2 gap-16 pat:grid-cols-1 pat:gap-8">
+
+          <!-- LEFT: Carousel -->
+          <div>
+            <!-- Main carousel -->
+            <div id="carousel" class="relative aspect-square bg-[#F9F8F3] rounded-xl overflow-hidden">
+              {slides.map((src, i) => (
+                <div
+                  class={`carousel-slide absolute inset-0 flex items-center justify-center p-12 transition-opacity duration-[600ms] ease-in-out ${i === 0 ? 'opacity-100' : 'opacity-0'}`}
+                  data-index={i}
+                >
+                  <img
+                    src={src}
+                    alt={`${brand.name} product image ${i + 1}`}
+                    class="max-w-full max-h-full object-contain"
+                    loading={i === 0 ? 'eager' : 'lazy'}
+                    decoding="async"
+                  />
+                </div>
+              ))}
+
+              <!-- Prev button -->
+              <button
+                id="prev-btn"
+                class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 border border-line flex items-center justify-center hover:bg-white hover:shadow-md transition-all duration-150 z-10"
+                aria-label="Previous image"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+
+              <!-- Next button -->
+              <button
+                id="next-btn"
+                class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 border border-line flex items-center justify-center hover:bg-white hover:shadow-md transition-all duration-150 z-10"
+                aria-label="Next image"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+
+              <!-- Dots -->
+              <div class="absolute bottom-[18px] left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                {slides.map((_, i) => (
+                  <button
+                    class={`carousel-dot h-2 rounded-full border-0 cursor-pointer transition-all duration-150 ${i === 0 ? 'w-6 bg-tea-green' : 'w-2 bg-[rgba(14,14,14,0.2)]'}`}
+                    data-index={i}
+                    aria-label={`Go to slide ${i + 1}`}
+                  ></button>
+                ))}
+              </div>
+            </div>
+
+            <!-- Thumbnails -->
+            <div class="grid grid-cols-4 gap-3 mt-4">
+              {slides.map((src, i) => (
+                <button
+                  class={`carousel-thumb aspect-square rounded-lg overflow-hidden border-2 cursor-pointer transition-all duration-150 bg-white ${i === 0 ? 'border-tea-green opacity-100' : 'border-transparent opacity-70 hover:opacity-100'}`}
+                  data-index={i}
+                  aria-label={`View image ${i + 1}`}
+                >
+                  <img
+                    src={src}
+                    alt=""
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <!-- RIGHT: Brand info -->
+          <div class="pt-2">
+
+            <!-- Logo -->
+            <div class="h-[120px] flex items-center mb-6 pat:justify-center">
+              <img
+                src={brand.logo}
+                alt={brand.name}
+                class="max-h-[120px] max-w-[220px] object-contain"
+                decoding="async"
+              />
+            </div>
+
+            <!-- Name -->
+            <h1 class="text-[48px] font-bold tracking-tight leading-[1.1] text-ink mb-1.5 pat:text-[36px] pat:text-center">{brand.name}</h1>
+
+            <!-- Maker -->
+            <p class="text-[14px] font-medium uppercase tracking-widest text-ink-3 mb-6 pat:text-center">{brand.maker}</p>
+
+            <!-- Description -->
+            <p class="text-[18px] leading-[1.7] text-ink-2 mb-0 pat:text-center">
+              It is a high-quality tea that does not require any blending and is made by the CTC (Cut, Tear, Curl) method of processing. It has a clear color, mellow aroma, bright flavor, and lasting aftertaste.
+            </p>
+
+            <!-- Spec list -->
+            <h2 class="text-[12px] font-semibold tracking-[0.08em] uppercase text-tea-green mt-8 mb-0">Product Specifications</h2>
+            <ul class="list-none p-0 m-0 border-t border-[#F0F0EE] mt-3">
+              {specs.map(s => (
+                <li class="border-b border-[#F0F0EE] py-3.5 grid grid-cols-[180px_1fr] items-baseline gap-4 pat:grid-cols-1 pat:gap-0.5">
+                  <span class="text-[13px] font-semibold uppercase tracking-wide text-ink">{s.label}</span>
+                  <span class="text-[15px] text-ink-2">{s.value}</span>
+                </li>
+              ))}
+            </ul>
+
+            <!-- CTA block -->
+            <div class="mt-8 bg-cream rounded-xl p-6 flex items-center justify-between gap-4 flex-wrap pat:flex-col pat:items-center pat:text-center">
+              <div>
+                <strong class="text-[16px] text-ink block mb-1">Interested in Buying?</strong>
+                <small class="text-[13px] text-ink-3">Samples and current pricing on request.</small>
+              </div>
+              <a href="/contact" class="inline-flex items-center gap-2 bg-ink text-white text-[14px] font-medium px-6 py-3 rounded-lg hover:bg-tea-dark transition-colors duration-150 no-underline shrink-0">
+                Contact Us
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- OTHER BRANDS -->
+    {otherBrands.length > 0 && (
+      <section class="bg-white border-t border-[#F0F0EE] py-12 pat:py-10">
+        <div class="max-w-[1200px] mx-auto px-8">
+          <div class="flex items-baseline justify-between mb-6">
+            <h3 class="text-[20px] font-semibold text-ink m-0">Other Brands</h3>
+            <a href="/brands" class="text-[13px] font-medium text-tea-green hover:underline no-underline">View all →</a>
+          </div>
+          <div class="grid grid-cols-4 gap-3.5 pat:grid-cols-2">
+            {otherBrands.map(b => (
+              <a
+                href={`/brands/${b.id}`}
+                class="group bg-white border border-[#F0F0EE] rounded-xl p-[18px] flex flex-col items-center gap-2.5 no-underline transition-all duration-200 hover:border-tea-green hover:-translate-y-0.5 hover:shadow-md"
+              >
+                <div class="h-16 flex items-center justify-center">
+                  <img
+                    src={b.logo}
+                    alt={b.name}
+                    class="max-h-16 max-w-[100px] object-contain"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <span class="text-[13px] font-semibold text-ink group-hover:text-tea-green transition-colors">{b.name}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  const slides = document.querySelectorAll<HTMLElement>('.carousel-slide');
+  const dots   = document.querySelectorAll<HTMLElement>('.carousel-dot');
+  const thumbs = document.querySelectorAll<HTMLElement>('.carousel-thumb');
+  const total  = slides.length;
+  let current  = 0;
+  let timer: ReturnType<typeof setInterval>;
+
+  function goTo(idx: number) {
+    slides[current].classList.replace('opacity-100', 'opacity-0');
+    dots[current].classList.remove('w-6', 'bg-tea-green');
+    dots[current].classList.add('w-2', 'bg-[rgba(14,14,14,0.2)]');
+    thumbs[current].classList.remove('border-tea-green', 'opacity-100');
+    thumbs[current].classList.add('border-transparent', 'opacity-70');
+
+    current = (idx + total) % total;
+
+    slides[current].classList.replace('opacity-0', 'opacity-100');
+    dots[current].classList.remove('w-2', 'bg-[rgba(14,14,14,0.2)]');
+    dots[current].classList.add('w-6', 'bg-tea-green');
+    thumbs[current].classList.remove('border-transparent', 'opacity-70');
+    thumbs[current].classList.add('border-tea-green', 'opacity-100');
+  }
+
+  function startTimer() {
+    clearInterval(timer);
+    timer = setInterval(() => goTo(current + 1), 5000);
+  }
+
+  document.getElementById('prev-btn')?.addEventListener('click', () => { goTo(current - 1); startTimer(); });
+  document.getElementById('next-btn')?.addEventListener('click', () => { goTo(current + 1); startTimer(); });
+
+  dots.forEach(d => d.addEventListener('click', () => { goTo(Number(d.dataset.index)); startTimer(); }));
+  thumbs.forEach(t => t.addEventListener('click', () => { goTo(Number(t.dataset.index)); startTimer(); }));
+
+  startTimer();
+</script>

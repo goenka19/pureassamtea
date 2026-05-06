@@ -2,3 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  button { font-family: inherit; }
+  /* No default focus outline flash on mouse click — keep keyboard outline */
+  :focus-visible { outline: 2px solid #006C3F; outline-offset: 2px; }
+  :focus:not(:focus-visible) { outline: none; }
+}
+
+@layer utilities {
+  /* FAQ accordion transition */
+  .duration-240 { transition-duration: 240ms; }
+}

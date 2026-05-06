@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { BRANDS } from '../data/brands';
+---
+
+<Layout title="Our Brands — Pureassamtea">
+  <Header />
+
+  <main>
+
+    <!-- HERO -->
+    <section class="bg-white pt-[120px] pb-16 pat:pt-16 pat:pb-10 text-center">
+      <div class="max-w-[820px] mx-auto px-8">
+        <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-tea-green mb-3">Our Brands</p>
+        <h1 class="text-[clamp(40px,5vw,64px)] font-bold tracking-tight leading-[1.1] text-ink mb-6">
+          Eight wholesale brands, one family standard.
+        </h1>
+        <p class="text-[18px] leading-[1.7] text-ink-2 pat:text-[16px]">
+          Each name below serves a different segment of the wholesale market. All are made in our own factories, from leaf grown in our own gardens.
+        </p>
+      </div>
+    </section>
+
+    <!-- BRANDS GRID -->
+    <section class="bg-cream pt-16 pb-24 pat:pt-10 pat:pb-16">
+      <div class="max-w-[1200px] mx-auto px-8">
+        <div class="grid grid-cols-4 gap-5 pat:grid-cols-2 pat:gap-3.5">
+          {BRANDS.map(b => (
+            <a
+              href={`/brands/${b.id}`}
+              class="group bg-white border border-[#F0F0EE] rounded-xl px-5 py-8 flex flex-col items-center gap-3.5 no-underline transition-all duration-200 shadow-[0_1px_2px_rgba(14,14,14,0.03)] hover:shadow-[0_8px_24px_rgba(14,14,14,0.08)] hover:-translate-y-0.5"
+            >
+              <div class="h-[150px] flex items-center justify-center w-full pat:h-20">
+                <img
+                  src={b.logo}
+                  alt={b.name}
+                  class="max-h-[150px] max-w-full w-auto object-contain scale-[1.18] pat:max-h-20"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="text-[16px] font-semibold text-ink group-hover:text-tea-green transition-colors duration-150">{b.name}</div>
+              <div class="text-[12px] text-ink-3 uppercase tracking-wide font-medium">{b.maker}</div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>
