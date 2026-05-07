@@ -35,7 +35,7 @@ import { BRANDS } from '../data/brands';
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
               <a href="/contact" class="inline-flex items-center gap-2 bg-transparent text-ink text-[14px] font-medium px-7 py-[14px] rounded-lg border border-line hover:border-ink transition-colors duration-150 no-underline">
-                Wholesale Enquiry
+                Request Samples
               </a>
             </div>
             <!-- Stats row — desktop only; mobile version is below the image -->
@@ -95,6 +95,29 @@ import { BRANDS } from '../data/brands';
         </div>
       </div>
     </section>
+
+
+    <!-- ================================================================
+         TRUST STRIP — proof-of-process signals
+    ================================================================ -->
+    <div class="bg-white border-y border-[#F0F0EE]">
+      <div class="max-w-[1200px] mx-auto px-8 py-5">
+        <ul class="list-none m-0 p-0 flex flex-wrap justify-center items-center gap-x-8 gap-y-3">
+          {[
+            'CTC &amp; Orthodox tea available',
+            '25 kg food-grade PP bags, standard',
+            'Samples dispatched on request',
+            'Response within 2 working days',
+            'Supplying buyers across 20+ markets',
+          ].map(item => (
+            <li class="flex items-center gap-2">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-tea-green shrink-0" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              <span class="text-[13px] font-medium text-ink-2" set:html={item}></span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
 
 
     <!-- ================================================================
@@ -163,6 +186,56 @@ import { BRANDS } from '../data/brands';
 
 
     <!-- ================================================================
+         WHO WE SERVE — buyer type segments
+    ================================================================ -->
+    <section class="bg-cream py-20 pat:py-14">
+      <div class="max-w-[1200px] mx-auto px-8">
+
+        <div class="text-center mb-14 pat:mb-10">
+          <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-tea-green mb-3">Who We Serve</p>
+          <h2 class="text-[clamp(32px,4vw,48px)] font-bold tracking-tight leading-[1.1] text-ink">
+            Built for buyers who know their tea.
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-4 gap-10 pat:grid-cols-2 pat:gap-8 mob:grid-cols-1">
+          {[
+            {
+              title: 'Trader',
+              body: 'Bulk CTC purchase for resale. Consistent supply across eight brands, with pricing and availability on request.',
+              icon: `<path d="M7 16V4m0 0L3 8m4-4 4 4M17 8v12m0 0 4-4m-4 4-4-4"/>`,
+            },
+            {
+              title: 'Retailer',
+              body: 'Branded wholesale stock in standard pack sizes. Flexible quantities to suit shelf and storeroom requirements.',
+              icon: `<path d="M3 9h18M3 9l1-4h16l1 4M3 9v10a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V9"/><path d="M9 9v5m6-5v5"/>`,
+            },
+            {
+              title: 'Packeter',
+              body: 'Raw CTC granules in 25 kg food-grade PP bags, ready for private labeling or direct retail packing.',
+              icon: `<path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/>`,
+            },
+            {
+              title: 'Broker',
+              body: 'Introduce buyers to our brands. We handle supply and fulfilment — you manage the buyer relationship.',
+              icon: `<path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>`,
+            },
+          ].map(buyer => (
+            <div class="flex flex-col gap-4 pt-6 border-t-2 border-tea-green">
+              <div class="w-11 h-11 rounded-full bg-tea-green flex items-center justify-center shrink-0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={buyer.icon}></svg>
+              </div>
+              <h3 class="text-[17px] font-semibold text-ink">{buyer.title}</h3>
+              <p class="text-[14px] leading-[1.65] text-ink-3 m-0">{buyer.body}</p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================================================================
          BRANDS GRID — cream background
     ================================================================ -->
     <section class="bg-cream pt-16 pb-24 pat:pt-12 pat:pb-16">
@@ -214,17 +287,66 @@ import { BRANDS } from '../data/brands';
 
 
     <!-- ================================================================
+         HOW TO BUY — 3-step process
+    ================================================================ -->
+    <section class="py-20 pat:py-14" style="background-color: #ffffff; background-image: radial-gradient(circle at 1px 1px, rgba(14,14,14,0.04) 1px, transparent 0); background-size: 22px 22px;">
+      <div class="max-w-[1200px] mx-auto px-8">
+
+        <div class="text-center mb-14 pat:mb-10">
+          <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-tea-green mb-3">How to Buy</p>
+          <h2 class="text-[clamp(32px,4vw,48px)] font-bold tracking-tight leading-[1.1] text-ink">
+            Three steps from enquiry to order.
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-3 gap-0 divide-x divide-[#F0F0EE] pat:grid-cols-1 pat:divide-x-0 pat:divide-y pat:gap-0">
+          {[
+            {
+              num: '01',
+              title: 'Share your requirements',
+              body: 'Tell us which brands, quantities, and packaging format you need. Use the contact form or write to us directly.',
+            },
+            {
+              num: '02',
+              title: 'Receive pricing and samples',
+              body: 'We respond within two working days with current availability, pricing, and sample dispatch confirmation.',
+            },
+            {
+              num: '03',
+              title: 'Confirm and order',
+              body: 'Once satisfied with the sample and terms, confirm your order. We handle packaging and dispatch from our Assam facilities.',
+            },
+          ].map(step => (
+            <div class="px-10 first:pl-0 last:pr-0 pat:px-0 pat:py-8 pat:first:pt-0 pat:last:pb-0">
+              <div class="text-[48px] font-bold text-tea-green leading-none tracking-tight pat:text-[36px]">{step.num}</div>
+              <h3 class="text-[18px] font-semibold text-ink mt-4 mb-2">{step.title}</h3>
+              <p class="text-[15px] leading-[1.7] text-ink-3 m-0">{step.body}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-12 text-center">
+          <a href="/contact" class="text-[14px] font-medium text-tea-green hover:underline no-underline">
+            Contact our team →
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================================================================
          CTA BAND — textured white
     ================================================================ -->
     <section class="py-20 pat:py-14 text-center" style="background-color: #ffffff; background-image: radial-gradient(circle at 1px 1px, rgba(14,14,14,0.04) 1px, transparent 0); background-size: 22px 22px;">
       <div class="max-w-[720px] mx-auto px-8">
         <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-tea-green mb-3">Wholesale &amp; Broker Enquiries</p>
-        <h2 class="text-[clamp(32px,4vw,48px)] font-bold tracking-tight leading-[1.1] text-ink mb-4">Interested in buying?</h2>
+        <h2 class="text-[clamp(32px,4vw,48px)] font-bold tracking-tight leading-[1.1] text-ink mb-4">Ready to place an order?</h2>
         <p class="text-[18px] leading-[1.7] text-ink-2 mb-8">
           Send us your requirements — brands, quantity, packaging — and our team will respond within two working days with availability and pricing.
         </p>
         <a href="/contact" class="inline-flex items-center gap-2 bg-tea-green text-white text-[14px] font-medium px-7 py-[14px] rounded-lg hover:bg-[#005530] transition-colors duration-150 no-underline">
-          Get in Touch
+          Request Samples &amp; Pricing
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
