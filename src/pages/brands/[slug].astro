@@ -34,7 +34,7 @@ const idx = BRANDS.findIndex(b => b.id === brand.id);
 const otherBrands = Array.from({ length: 4 }, (_, i) => BRANDS[(idx + i + 1) % BRANDS.length]);
 ---
 
-<Layout title={`${brand.name} — Pureassamtea`}>
+<Layout title={`${brand.name} — Pureassamtea`} description={`${brand.name} — premium Assam CTC tea available for wholesale purchase. Enquire for samples and bulk pricing.`}>
   <Header />
 
   <main class="bg-cream">
