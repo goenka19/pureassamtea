@@ -167,31 +167,24 @@ import { BRANDS } from '../data/brands';
     <!-- ================================================================
          WHO WE SERVE — buyer type segments
     ================================================================ -->
-    <section class="bg-white py-14 pat:py-10">
+    <section class="bg-cream py-12 pat:py-10">
       <div class="max-w-[1200px] mx-auto px-8">
 
-        <div class="mb-8">
-          <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-tea-green mb-2">Who We Serve</p>
-          <h2 class="text-[clamp(24px,3vw,36px)] font-bold tracking-tight leading-[1.1] text-ink max-w-[480px]">
-            Built for buyers who know their tea.
-          </h2>
+        <div class="flex items-baseline justify-between mb-8 pat:flex-col pat:gap-1">
+          <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-tea-green">Who We Serve</p>
+          <p class="text-[14px] text-ink-3">Traders · Retailers · Packeters · Brokers</p>
         </div>
 
-        <div class="border border-[#E5E5E5] rounded-xl overflow-hidden divide-y divide-[#E5E5E5]">
+        <div class="grid grid-cols-4 pat:grid-cols-2 gap-px bg-[#DCDCDC] border border-[#DCDCDC] rounded-xl overflow-hidden">
           {[
-            { type: 'Trader',   body: 'Bulk CTC purchase for resale. Consistent supply across eight brands, with pricing and availability on request.' },
-            { type: 'Retailer', body: 'Branded wholesale stock in standard pack sizes. Flexible quantities to suit shelf and storeroom requirements.' },
-            { type: 'Packeter', body: 'Raw CTC granules in 25 kg food-grade PP bags, ready for private labeling or direct retail packing.' },
-            { type: 'Broker',   body: 'Introduce buyers to our brands. We handle supply and fulfilment — you manage the buyer relationship.' },
+            { type: 'Trader',   body: 'Bulk CTC for resale. Consistent supply across eight brands, pricing on request.' },
+            { type: 'Retailer', body: 'Wholesale stock in standard pack sizes. Flexible quantities for shelf and storeroom.' },
+            { type: 'Packeter', body: '25 kg food-grade PP bags, ready for private labeling or direct retail packing.' },
+            { type: 'Broker',   body: 'We handle supply and fulfilment. You manage the buyer relationship.' },
           ].map(buyer => (
-            <div class="grid grid-cols-[200px_1fr] pat:grid-cols-1">
-              <div class="bg-cream px-7 py-5 flex flex-col justify-center gap-0.5 pat:px-5 pat:py-4 pat:border-b pat:border-[#E5E5E5]">
-                <span class="text-[11px] font-semibold tracking-[0.1em] uppercase text-tea-green">Buyer type</span>
-                <span class="text-[18px] font-bold text-ink leading-snug">{buyer.type}</span>
-              </div>
-              <div class="bg-white px-7 py-5 flex items-center pat:px-5 pat:py-4">
-                <p class="text-[14px] leading-[1.65] text-ink-3 m-0">{buyer.body}</p>
-              </div>
+            <div class="bg-cream px-7 py-7 pat:px-5 pat:py-5">
+              <p class="text-[15px] font-semibold text-ink mb-2 m-0">{buyer.type}</p>
+              <p class="text-[13px] text-ink-3 leading-relaxed m-0">{buyer.body}</p>
             </div>
           ))}
         </div>
