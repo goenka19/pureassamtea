@@ -10,13 +10,13 @@ import Footer from '../components/Footer.astro';
   <main>
 
     <!-- HERO -->
-    <section class="bg-white pt-[120px] pb-20 pat:pt-16 pat:pb-12">
-      <div class="max-w-[920px] mx-auto px-8 text-center">
+    <section class="bg-white pt-[120px] pb-20 pat:pt-16 pat:pb-12 mob:pt-10 mob:pb-8">
+      <div class="max-w-[920px] mx-auto px-8 mob:px-4 text-center">
         <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-tea-green mb-3">About Us</p>
         <h1 class="text-[clamp(40px,5vw,64px)] font-bold tracking-tight leading-[1.1] text-ink mb-6">
           Family-owned, four generations and counting.
         </h1>
-        <p class="text-[20px] leading-[1.7] text-ink-2 max-w-[720px] mx-auto pat:text-[17px]">
+        <p class="text-[18px] leading-[1.7] text-ink-2 max-w-[720px] mx-auto pat:text-[16px]">
           From a single garden in 1954 to one of India's premier tea producers — the story of the Goenka Family Group is the story of unrelenting family support, independent thinking, and patient growth.
         </p>
       </div>
@@ -38,8 +38,8 @@ import Footer from '../components/Footer.astro';
 
 
     <!-- MAIN STORY -->
-    <section class="bg-white py-24 pat:py-16">
-      <div class="max-w-[1200px] mx-auto px-8">
+    <section class="bg-white py-24 pat:py-16 mob:py-10">
+      <div class="max-w-[1200px] mx-auto px-8 mob:px-4">
         <div class="grid grid-cols-[1fr_2fr] gap-20 pat:grid-cols-1 pat:gap-8">
 
           <!-- Left: label -->
@@ -49,8 +49,8 @@ import Footer from '../components/Footer.astro';
           </div>
 
           <!-- Right: paragraphs -->
-          <div class="max-w-[640px]">
-            <p class="text-[18px] leading-[1.7] text-ink-2 mb-5">
+          <div class="max-w-[640px] pat:max-w-none">
+            <p class="text-[16px] leading-[1.7] text-ink-2 mb-5">
               We are family-owned and operated, four generations and counting. Family provides unrelenting support and our independence lets us forge our path and write our own rules. Founded by Late Khetsi Das Agarwalla in 1954 against all odds, the Goenka Family Group have since grown to become one of India's premier tea producers.
             </p>
             <p class="text-[16px] leading-[1.7] text-ink-2 mb-5">
@@ -70,15 +70,15 @@ import Footer from '../components/Footer.astro';
 
 
     <!-- TIMELINE — cream background -->
-    <section class="bg-cream py-20 pat:py-14">
-      <div class="max-w-[1200px] mx-auto px-8">
+    <section class="bg-cream py-20 pat:py-14 mob:py-10">
+      <div class="max-w-[1200px] mx-auto px-8 mob:px-4">
         <div class="text-center mb-16 pat:mb-10">
           <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-tea-green mb-3">Lineage</p>
           <h2 class="text-[clamp(32px,4vw,48px)] font-bold tracking-tight leading-[1.1] text-ink">
             Four generations of stewardship
           </h2>
         </div>
-        <div class="grid grid-cols-4 gap-6 pat:grid-cols-2 pat:gap-4 max-[480px]:grid-cols-1">
+        <div class="grid grid-cols-4 gap-6 pat:grid-cols-2 pat:gap-4 mob:grid-cols-1">
           {[
             { era: 'First Gen · 1954',   name: 'Late Khetsi Das Agarwalla',    role: 'Founder. Built the first garden against all odds.' },
             { era: 'Second Gen',          name: 'Shri Radheshyam Agarwalla',   role: 'Expanded into CTC processing across Upper Assam.' },
@@ -97,8 +97,8 @@ import Footer from '../components/Footer.astro';
 
 
     <!-- CTA -->
-    <section class="bg-white py-24 pat:py-16 text-center">
-      <div class="max-w-[680px] mx-auto px-8">
+    <section class="bg-white py-24 pat:py-16 mob:py-10 text-center">
+      <div class="max-w-[680px] mx-auto px-8 mob:px-4">
         <h2 class="text-[clamp(32px,4vw,48px)] font-bold tracking-tight leading-[1.1] text-ink mb-4">
           Ready to source from us?
         </h2>

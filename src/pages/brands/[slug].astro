@@ -40,7 +40,7 @@ const otherBrands = Array.from({ length: 4 }, (_, i) => BRANDS[(idx + i + 1) % B
   <main class="bg-cream">
 
     <section class="pt-12 pb-24 pat:pt-8 pat:pb-16">
-      <div class="max-w-[1200px] mx-auto px-8">
+      <div class="max-w-[1200px] mx-auto px-8 mob:px-4">
 
         <!-- Breadcrumb -->
         <nav class="flex items-center gap-2 text-[13px] text-ink-3 mb-8" aria-label="Breadcrumb">
@@ -178,7 +178,7 @@ const otherBrands = Array.from({ length: 4 }, (_, i) => BRANDS[(idx + i + 1) % B
     <!-- OTHER BRANDS -->
     {otherBrands.length > 0 && (
       <section class="bg-white border-t border-[#F0F0EE] py-12 pat:py-10">
-        <div class="max-w-[1200px] mx-auto px-8">
+        <div class="max-w-[1200px] mx-auto px-8 mob:px-4">
           <div class="flex items-baseline justify-between mb-6">
             <h3 class="text-[20px] font-semibold text-ink m-0">Other Brands</h3>
             <a href="/brands" class="text-[13px] font-medium text-tea-green hover:underline no-underline">View all →</a>
