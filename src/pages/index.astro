@@ -101,17 +101,18 @@ import { BRANDS } from '../data/brands';
          TRUST STRIP — proof-of-process signals
     ================================================================ -->
     <div class="bg-white border-y border-[#F0F0EE]">
-      <div class="max-w-[1200px] mx-auto px-8 py-5">
-        <ul class="list-none m-0 p-0 flex flex-wrap justify-center items-center gap-x-8 gap-y-3">
+      <div class="max-w-[1200px] mx-auto px-8 py-4">
+        <ul class="list-none m-0 p-0 flex justify-center items-center gap-x-7 mob:flex-wrap mob:gap-y-2.5">
           {[
-            'CTC &amp; Orthodox tea available',
-            '25 kg food-grade PP bags, standard',
-            'Samples dispatched on request',
-            'Response within 2 working days',
-            'Supplying buyers across 20+ markets',
-          ].map(item => (
-            <li class="flex items-center gap-2">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-tea-green shrink-0" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            'CTC &amp; Orthodox teas',
+            '25 kg PP bags standard',
+            'Samples on request',
+            '2-day response',
+            '20+ markets supplied',
+          ].map((item, i) => (
+            <li class="flex items-center gap-2 shrink-0">
+              {i > 0 && <span class="text-[#D0D0D0] mr-5 mob:hidden" aria-hidden="true">·</span>}
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-tea-green shrink-0" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
               <span class="text-[13px] font-medium text-ink-2" set:html={item}></span>
             </li>
           ))}
@@ -164,67 +165,32 @@ import { BRANDS } from '../data/brands';
 
 
     <!-- ================================================================
-         STATS BAND — textured white
-    ================================================================ -->
-    <section class="py-20 pat:py-14" style="background-color: #ffffff; background-image: radial-gradient(circle at 1px 1px, rgba(14,14,14,0.04) 1px, transparent 0); background-size: 22px 22px;">
-      <div class="max-w-[1200px] mx-auto px-8">
-        <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-tea-green mb-12 pat:mb-8">Our Scale</p>
-        <div class="grid grid-cols-4 gap-8 pat:grid-cols-2 pat:gap-6">
-          {[
-            { num: '1954',  label: 'Founded by Late Khetsi Das Agarwalla' },
-            { num: '2.7M',  label: 'Kilograms of CTC tea produced annually' },
-            { num: '16',    label: 'Factories and gardens across Assam' },
-            { num: '8',     label: 'Wholesale brands under one family' },
-          ].map(s => (
-            <div>
-              <div class="text-[56px] font-bold tracking-tight leading-none text-tea-green mb-2 pat:text-[40px]">{s.num}</div>
-              <div class="text-[14px] text-ink-3 leading-snug">{s.label}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ================================================================
          WHO WE SERVE — buyer type segments
     ================================================================ -->
-    <section class="bg-white py-20 pat:py-14">
+    <section class="bg-white py-14 pat:py-10">
       <div class="max-w-[1200px] mx-auto px-8">
 
-        <div class="mb-10">
-          <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-tea-green mb-3">Who We Serve</p>
-          <h2 class="text-[clamp(28px,3.5vw,42px)] font-bold tracking-tight leading-[1.1] text-ink max-w-[520px]">
+        <div class="mb-8">
+          <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-tea-green mb-2">Who We Serve</p>
+          <h2 class="text-[clamp(24px,3vw,36px)] font-bold tracking-tight leading-[1.1] text-ink max-w-[480px]">
             Built for buyers who know their tea.
           </h2>
         </div>
 
-        <div class="border border-[#E5E5E5] rounded-2xl overflow-hidden divide-y divide-[#E5E5E5]">
+        <div class="border border-[#E5E5E5] rounded-xl overflow-hidden divide-y divide-[#E5E5E5]">
           {[
-            {
-              type: 'Trader',
-              body: 'Bulk CTC purchase for resale. Consistent supply across eight brands, with pricing and availability on request.',
-            },
-            {
-              type: 'Retailer',
-              body: 'Branded wholesale stock in standard pack sizes. Flexible quantities to suit shelf and storeroom requirements.',
-            },
-            {
-              type: 'Packeter',
-              body: 'Raw CTC granules in 25 kg food-grade PP bags, ready for private labeling or direct retail packing.',
-            },
-            {
-              type: 'Broker',
-              body: 'Introduce buyers to our brands. We handle supply and fulfilment — you manage the buyer relationship.',
-            },
+            { type: 'Trader',   body: 'Bulk CTC purchase for resale. Consistent supply across eight brands, with pricing and availability on request.' },
+            { type: 'Retailer', body: 'Branded wholesale stock in standard pack sizes. Flexible quantities to suit shelf and storeroom requirements.' },
+            { type: 'Packeter', body: 'Raw CTC granules in 25 kg food-grade PP bags, ready for private labeling or direct retail packing.' },
+            { type: 'Broker',   body: 'Introduce buyers to our brands. We handle supply and fulfilment — you manage the buyer relationship.' },
           ].map(buyer => (
-            <div class="grid grid-cols-[220px_1fr] pat:grid-cols-1">
-              <div class="bg-cream px-8 py-7 flex flex-col justify-center gap-0.5 pat:px-6 pat:py-5 pat:border-b pat:border-[#E5E5E5]">
+            <div class="grid grid-cols-[200px_1fr] pat:grid-cols-1">
+              <div class="bg-cream px-7 py-5 flex flex-col justify-center gap-0.5 pat:px-5 pat:py-4 pat:border-b pat:border-[#E5E5E5]">
                 <span class="text-[11px] font-semibold tracking-[0.1em] uppercase text-tea-green">Buyer type</span>
-                <span class="text-[20px] font-bold text-ink leading-snug">{buyer.type}</span>
+                <span class="text-[18px] font-bold text-ink leading-snug">{buyer.type}</span>
               </div>
-              <div class="bg-white px-8 py-7 flex items-center pat:px-6 pat:py-5">
-                <p class="text-[15px] leading-[1.7] text-ink-3 m-0">{buyer.body}</p>
+              <div class="bg-white px-7 py-5 flex items-center pat:px-5 pat:py-4">
+                <p class="text-[14px] leading-[1.65] text-ink-3 m-0">{buyer.body}</p>
               </div>
             </div>
           ))}
