@@ -14,7 +14,7 @@ const buyerTypes = ['Trader','Retailer','Packeter','Broker','Any other'];
 
     <!-- HERO -->
     <section class="bg-white pt-20 pb-12 pat:pt-12 pat:pb-8 text-center">
-      <div class="max-w-[760px] mx-auto px-8">
+      <div class="max-w-[760px] mx-auto px-8 mob:px-4">
         <h1 class="text-[clamp(40px,5vw,64px)] font-bold tracking-tight leading-[1.1] text-ink mb-4">Contact Us</h1>
         <p class="text-[18px] leading-[1.7] text-ink-2 pat:text-[16px]">
           Wholesale enquiries, broker partnerships, and sample requests — we read every message and reply within two working days.
@@ -25,7 +25,7 @@ const buyerTypes = ['Trader','Retailer','Packeter','Broker','Any other'];
 
     <!-- SPLIT CARD -->
     <section class="bg-cream pt-8 pb-20 pat:pb-12">
-      <div class="max-w-[1200px] mx-auto px-8">
+      <div class="max-w-[1200px] mx-auto px-8 mob:px-4">
 
         <div class="grid grid-cols-2 bg-white rounded-2xl border border-[#F0F0EE] shadow-sm overflow-hidden pat:grid-cols-1">
 
@@ -45,7 +45,8 @@ const buyerTypes = ['Trader','Retailer','Packeter','Broker','Any other'];
           <div class="p-12 flex flex-col gap-[18px] pat:p-5">
             <h2 class="text-[clamp(32px,4vw,48px)] font-bold tracking-tight leading-[1.1] text-ink mb-2">Drop Us a Line</h2>
 
-            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="flex flex-col gap-[18px]">
+            <form id="contact-form" action="https://formspree.io/f/xykodqrb" method="POST" class="flex flex-col gap-[18px]">
+              <input type="hidden" name="_subject" value="New wholesale enquiry — PureAssamTea" />
 
               <!-- Name -->
               <div class="flex flex-col gap-1.5">
@@ -118,10 +119,19 @@ const buyerTypes = ['Trader','Retailer','Packeter','Broker','Any other'];
               </fieldset>
 
               <!-- Submit -->
-              <button type="submit"
+              <button id="submit-btn" type="submit"
                 class="w-full bg-tea-green text-white text-[15px] font-medium py-4 rounded-lg hover:bg-[#005530] transition-colors duration-150 mt-2">
                 Submit
               </button>
+
+              <!-- Success message (hidden until submit) -->
+              <div id="form-success" class="hidden items-center gap-3 bg-[#F0F9F4] border border-[#C5E4D3] rounded-lg px-4 py-3.5">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-tea-green shrink-0" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                <div>
+                  <p class="text-[14px] font-semibold text-ink m-0">Enquiry sent.</p>
+                  <p class="text-[13px] text-ink-3 m-0">We'll get back to you within two working days.</p>
+                </div>
+              </div>
 
             </form>
           </div>
@@ -171,3 +181,31 @@ const buyerTypes = ['Trader','Retailer','Packeter','Broker','Any other'];
 
   <Footer />
 </Layout>
+
+<script>
+  const form    = document.getElementById('contact-form') as HTMLFormElement;
+  const btn     = document.getElementById('submit-btn') as HTMLButtonElement;
+  const success = document.getElementById('form-success') as HTMLElement;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' },
+    });
+
+    if (res.ok) {
+      form.reset();
+      btn.classList.add('hidden');
+      success.classList.remove('hidden');
+      success.classList.add('flex');
+    } else {
+      btn.textContent = 'Submit';
+      btn.disabled = false;
+    }
+  });
+</script>

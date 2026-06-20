@@ -11,8 +11,8 @@ import { BRANDS } from '../data/brands';
   <main>
 
     <!-- HERO -->
-    <section class="bg-white pt-[120px] pb-16 pat:pt-16 pat:pb-10 text-center">
-      <div class="max-w-[820px] mx-auto px-8">
+    <section class="bg-white pt-[120px] pb-16 pat:pt-16 pat:pb-10 mob:pt-10 mob:pb-6 text-center">
+      <div class="max-w-[820px] mx-auto px-8 mob:px-4">
         <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-tea-green mb-3">Our Brands</p>
         <h1 class="text-[clamp(40px,5vw,64px)] font-bold tracking-tight leading-[1.1] text-ink mb-6">
           Eight wholesale brands, one family standard.
@@ -24,8 +24,8 @@ import { BRANDS } from '../data/brands';
     </section>
 
     <!-- BRANDS GRID -->
-    <section class="bg-cream pt-16 pb-24 pat:pt-10 pat:pb-16">
-      <div class="max-w-[1200px] mx-auto px-8">
+    <section class="bg-cream pt-16 pb-24 pat:pt-10 pat:pb-16 mob:pt-8 mob:pb-10">
+      <div class="max-w-[1200px] mx-auto px-8 mob:px-4">
         <div class="grid grid-cols-4 gap-5 pat:grid-cols-2 pat:gap-3.5">
           {BRANDS.map(b => (
             <a

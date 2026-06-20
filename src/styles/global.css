@@ -13,7 +13,14 @@
   :focus:not(:focus-visible) { outline: none; }
 }
 
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 @layer utilities {
   /* FAQ accordion transition */
   .duration-240 { transition-duration: 240ms; }
+  /* Trust bar mobile ticker */
+  .ticker { animation: marquee 30s linear infinite; }
 }
