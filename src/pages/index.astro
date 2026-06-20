@@ -22,7 +22,7 @@ import { BRANDS } from '../data/brands';
 
           <!-- LEFT: Text -->
           <div>
-            <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-tea-green mb-3">Established 1954 · Tinsukia, Assam</p>
+            <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-tea-green mb-3">Established 1997 · Dibrugarh, Assam</p>
             <h1 class="text-[clamp(40px,4.5vw,60px)] font-bold tracking-tight leading-[1.1] text-ink mt-3 mb-5">
               Tea from the gardens of Upper Assam, four generations on.
             </h1>
@@ -186,35 +186,6 @@ import { BRANDS } from '../data/brands';
           </div>
 
         </div>
-      </div>
-    </section>
-
-
-    <!-- ================================================================
-         WHO WE SERVE — buyer type segments
-    ================================================================ -->
-    <section class="bg-cream py-12 pat:py-10">
-      <div class="max-w-[1200px] mx-auto px-8 mob:px-4">
-
-        <div class="flex items-baseline justify-between mb-8 pat:flex-col pat:gap-1">
-          <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-tea-green">Who We Serve</p>
-          <p class="text-[14px] text-ink-3">Traders · Retailers · Packeters · Brokers</p>
-        </div>
-
-        <div class="grid grid-cols-4 pat:grid-cols-2 mob:grid-cols-1 gap-px bg-[#DCDCDC] border border-[#DCDCDC] rounded-xl overflow-hidden">
-          {[
-            { type: 'Trader',   body: 'Bulk CTC for resale. Consistent supply across eight brands, pricing on request.' },
-            { type: 'Retailer', body: 'Wholesale stock in standard pack sizes. Flexible quantities for shelf and storeroom.' },
-            { type: 'Packeter', body: '25 kg food-grade PP bags, ready for private labeling or direct retail packing.' },
-            { type: 'Broker',   body: 'We handle supply and fulfilment. You manage the buyer relationship.' },
-          ].map(buyer => (
-            <div class="bg-cream px-7 py-7 pat:px-5 pat:py-5 mob:px-4 mob:py-4">
-              <p class="text-[15px] font-semibold text-ink mb-2 m-0">{buyer.type}</p>
-              <p class="text-[13px] text-ink-3 leading-relaxed m-0">{buyer.body}</p>
-            </div>
-          ))}
-        </div>
-
       </div>
     </section>
 

@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"systemMessage\": \"VERIFY: Did you complete EVERY item the user asked for? Re-read their message now. Did you check your output? Never report something done unless you confirmed it with your own eyes.\"}'"
+          }
+        ]
+      }
+    ]
+  }
+}
