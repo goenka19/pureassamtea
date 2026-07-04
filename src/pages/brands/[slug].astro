@@ -31,13 +31,27 @@ const specs = [
 ];
 
 const idx = BRANDS.findIndex(b => b.id === brand.id);
-const otherBrands = Array.from({ length: 4 }, (_, i) => BRANDS[(idx + i + 1) % BRANDS.length]);
+const otherBrands = Array.from({ length: 4 }, (_, i) => BRANDS[(idx + i + 1) % BRANDS.length]).filter(b => !b.placeholder);
 ---
 
-<Layout title={`${brand.name} — Pureassamtea`} description={`${brand.name} — premium Assam CTC tea available for wholesale purchase. Enquire for samples and bulk pricing.`}>
+<Layout title={brand.placeholder ? `Coming Soon — Pureassamtea` : `${brand.name} — Pureassamtea`} description={brand.placeholder ? `A new brand from Pureassamtea is coming soon.` : `${brand.name} — premium Assam CTC tea available for wholesale purchase. Enquire for samples and bulk pricing.`}>
   <Header />
 
   <main class="bg-cream">
+
+  {brand.placeholder ? (
+    <section class="pt-[140px] pb-32 pat:pt-24 pat:pb-20 flex flex-col items-center text-center">
+      <div class="w-20 h-20 rounded-full bg-[#F0F0EE] flex items-center justify-center mb-8">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#BBBBBB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+      </div>
+      <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-ink-3 mb-3">Brand TBA</p>
+      <h1 class="text-[clamp(36px,5vw,56px)] font-bold tracking-tight leading-[1.1] text-ink mb-4">Coming Soon</h1>
+      <p class="text-[18px] leading-[1.7] text-ink-2 max-w-[480px] mb-8 px-4">We're working on something new. Check back soon or get in touch to learn more.</p>
+      <a href="/brands" class="inline-flex items-center gap-2 bg-ink text-white text-[14px] font-medium px-6 py-3 rounded-lg hover:bg-tea-dark transition-colors duration-150 no-underline">
+        ← Back to All Brands
+      </a>
+    </section>
+  ) : (
 
     <section class="pt-12 pb-24 pat:pt-8 pat:pb-16">
       <div class="max-w-[1200px] mx-auto px-8 mob:px-4">
@@ -205,6 +219,8 @@ const otherBrands = Array.from({ length: 4 }, (_, i) => BRANDS[(idx + i + 1) % B
         </div>
       </section>
     )}
+
+  )}
 
   </main>
 
