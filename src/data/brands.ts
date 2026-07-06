@@ -8,7 +8,7 @@ export interface Brand {
 
 export const BRANDS: Brand[] = [
   { id: 'lalkilla',      name: 'Lalkilla',      maker: 'Rhino Industries',         logo: '/images/brands/lalkilla.png' },
-  { id: 'krisnachura',   name: 'Krisnachura',   maker: 'CTC · Wholesale',          logo: '/images/brands/krisnachura.jpeg' },
+  { id: 'krisnachura',   name: 'Krisnachura',   maker: 'CTC · Wholesale',          logo: '/images/brands/krisnachura.png' },
   { id: 'ratanpur',      name: 'Ratanpur',      maker: 'CTC · Wholesale',          logo: '/images/brands/ratanpur.png' },
   { id: 'bortemto',      name: 'Bortemto',      maker: 'Sainagar',                 logo: '/images/brands/bortemto.png' },
   { id: 'kakatibaree',   name: 'Kakatibaree',   maker: 'Ratanpur',                 logo: '/images/brands/kakatibaree.png' },

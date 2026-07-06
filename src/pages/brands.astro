@@ -30,19 +30,17 @@ import { BRANDS } from '../data/brands';
           {BRANDS.map(b => (
             <a
               href={`/brands/${b.id}`}
-              class="group bg-white border border-[#F0F0EE] rounded-xl px-5 py-8 flex flex-col items-center gap-3.5 no-underline transition-all duration-200 shadow-[0_1px_2px_rgba(14,14,14,0.03)] hover:shadow-[0_8px_24px_rgba(14,14,14,0.08)] hover:-translate-y-0.5"
+              class="group bg-white border border-[#F0F0EE] rounded-xl px-5 py-8 flex items-center justify-center no-underline transition-all duration-200 shadow-[0_1px_2px_rgba(14,14,14,0.03)] hover:shadow-[0_8px_24px_rgba(14,14,14,0.08)] hover:-translate-y-0.5"
             >
-              <div class="h-[150px] flex items-center justify-center w-full pat:h-20">
+              <div class="h-[160px] flex items-center justify-center w-full pat:h-24">
                 <img
                   src={b.logo}
                   alt={b.name}
-                  class="max-h-[150px] max-w-full w-auto object-contain scale-[1.18] pat:max-h-20"
+                  class="max-h-[160px] max-w-full w-auto object-contain pat:max-h-24"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
-              <div class="text-[16px] font-semibold text-ink group-hover:text-tea-green transition-colors duration-150">{b.name}</div>
-              <div class="text-[12px] text-ink-3 uppercase tracking-wide font-medium">{b.maker}</div>
             </a>
           ))}
         </div>
