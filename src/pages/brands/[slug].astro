@@ -187,18 +187,17 @@ const otherBrands = Array.from({ length: 4 }, (_, i) => BRANDS[(idx + i + 1) % B
             {otherBrands.map(b => (
               <a
                 href={`/brands/${b.id}`}
-                class="group bg-white border border-[#F0F0EE] rounded-xl p-[18px] flex flex-col items-center gap-2.5 no-underline transition-all duration-200 hover:border-tea-green hover:-translate-y-0.5 hover:shadow-md"
+                class="group bg-white border border-[#F0F0EE] rounded-xl p-[18px] flex items-center justify-center no-underline transition-all duration-200 hover:border-tea-green hover:-translate-y-0.5 hover:shadow-md"
               >
-                <div class="h-16 flex items-center justify-center">
+                <div class="h-20 flex items-center justify-center">
                   <img
                     src={b.logo}
                     alt={b.name}
-                    class="max-h-16 max-w-[100px] object-contain"
+                    class="max-h-20 max-w-[120px] object-contain"
                     loading="lazy"
                     decoding="async"
                   />
                 </div>
-                <span class="text-[13px] font-semibold text-ink group-hover:text-tea-green transition-colors">{b.name}</span>
               </a>
             ))}
           </div>
