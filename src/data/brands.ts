@@ -3,7 +3,6 @@ export interface Brand {
   name: string;
   maker: string;
   logo: string;
-  placeholder?: boolean;
 }
 
 export const BRANDS: Brand[] = [

@@ -5,9 +5,9 @@ import Footer from '../components/Footer.astro';
 import { BRANDS } from '../data/brands';
 
 const factories = [
-  { name: 'Rhino Industries', brands: BRANDS.filter(b => b.maker === 'Rhino Industries') },
-  { name: 'Sainagar',         brands: BRANDS.filter(b => b.maker === 'Sainagar') },
-  { name: 'Ratanpur',         brands: BRANDS.filter(b => b.maker === 'Ratanpur') },
+  { name: 'Rhino Industries', location: 'Dibrugarh', brands: BRANDS.filter(b => b.maker === 'Rhino Industries') },
+  { name: 'Sainagar',         location: 'Jokai',     brands: BRANDS.filter(b => b.maker === 'Sainagar') },
+  { name: 'Ratanpur',         location: 'Sonari',    brands: BRANDS.filter(b => b.maker === 'Ratanpur') },
 ];
 ---
 
@@ -35,7 +35,7 @@ const factories = [
         <div class="flex flex-col gap-12 pat:gap-8">
           {factories.map(f => (
             <div>
-              <p class="text-[11px] font-semibold tracking-[0.12em] uppercase text-ink-3 mb-4 pb-3 border-b border-[#EBEBEB]">{f.name}</p>
+              <h2 class="text-[11px] font-semibold tracking-[0.12em] uppercase text-ink-3 mb-4 pb-3 border-b border-[#EBEBEB]">{f.name} <span class="font-normal normal-case tracking-normal">· {f.location}</span></h2>
               <div class="grid grid-cols-3 gap-5 pat:grid-cols-2 pat:gap-3.5">
                 {f.brands.map(b => (
                   <a
