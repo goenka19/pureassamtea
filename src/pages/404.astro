@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Page Not Found — Pureassamtea" description="The page you are looking for does not exist.">
+  <Header />
+
+  <main>
+    <section class="bg-white pt-[120px] pb-24 pat:pt-16 pat:pb-16 text-center">
+      <div class="max-w-[680px] mx-auto px-8 mob:px-4">
+        <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-tea-green mb-3">404</p>
+        <h1 class="text-[clamp(40px,5vw,64px)] font-bold tracking-tight leading-[1.1] text-ink mb-6">
+          Page not found.
+        </h1>
+        <p class="text-[18px] leading-[1.7] text-ink-2 mb-10 pat:text-[16px]">
+          The page you are looking for does not exist or may have moved. Try one of the links below.
+        </p>
+        <div class="flex gap-3 justify-center flex-wrap">
+          <a href="/brands" class="inline-flex items-center gap-2 bg-tea-green text-white text-[14px] font-medium px-7 py-[14px] rounded-lg hover:bg-[#005530] transition-colors duration-150 no-underline">
+            Our Brands
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/contact" class="inline-flex items-center bg-transparent text-ink text-[14px] font-medium px-7 py-[14px] rounded-lg border border-line hover:border-ink transition-colors duration-150 no-underline">
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

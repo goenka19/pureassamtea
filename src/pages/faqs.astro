@@ -28,15 +28,15 @@ const FAQ_GROUPS = [
     items: [
       {
         q: 'What packaging formats are available?',
-        a: 'Our standard wholesale format is 25 kg food-grade PP bags, lined for moisture protection. Select brands are also available in 1 kg, 5 kg, and 10 kg formats for retailers and packeters. Custom packaging — including private-label printing — can be arranged on bulk orders. Speak to us about specifications.',
+        a: 'Our standard wholesale format is 25 kg food-grade PP bags, lined for moisture protection. Speak to us about your specific packaging requirements.',
       },
       {
         q: 'How is the tea protected during transit?',
-        a: 'Each PP bag is sealed against moisture and light, then loaded into corrugated outer cartons or palletised for export consignments. Granule integrity, aroma, and color are preserved when stored in a cool, dry place away from strong odours.',
+        a: 'Each PP bag is sealed against moisture and light, then loaded into corrugated outer cartons or palletised for onward dispatch. Granule integrity, aroma, and colour are preserved when stored in a cool, dry place away from strong odours.',
       },
       {
         q: 'What is the shelf life of your tea?',
-        a: 'Unopened CTC tea retains its character for 18 months from the date of packaging when stored as recommended. Each bag carries a batch code and packaging date for full traceability back to the garden and factory.',
+        a: 'Unopened CTC tea retains its character for 18 months from the date of packaging when stored as recommended.',
       },
     ],
   },
@@ -46,15 +46,11 @@ const FAQ_GROUPS = [
     items: [
       {
         q: 'Where do you ship to?',
-        a: 'We dispatch across India and to wholesale partners in over twenty countries. Domestic orders move by road from Tinsukia, Assam. International orders are handled by sea freight ex-Kolkata or Haldia, with documentation prepared by our export desk.',
+        a: 'We dispatch to wholesale buyers across India. Orders move by road from our Tinsukia, Assam facility.',
       },
       {
         q: 'What are typical delivery timelines?',
-        a: 'Domestic dispatch begins within three to five working days of order confirmation. Transit time depends on destination — typically four to seven days within India. International sea freight ranges from three to six weeks depending on port and incoterms agreed.',
-      },
-      {
-        q: 'Do you handle export documentation?',
-        a: 'Yes. Our export team prepares the commercial invoice, packing list, certificate of origin, phytosanitary certificate, and Tea Board permit. Buyers receive a complete document set before vessel sailing for hassle-free clearance at destination.',
+        a: 'Dispatch begins within three to five working days of order confirmation. Transit time depends on destination — typically four to seven days within India.',
       },
     ],
   },
@@ -64,11 +60,11 @@ const FAQ_GROUPS = [
     items: [
       {
         q: 'Where is your tea grown and processed?',
-        a: 'Across sixteen factories and gardens in Assam, all owned and operated by the Goenka Family Group. Every leaf is plucked, withered, and processed in-house using the CTC (Cut, Tear, Curl) method — the same approach the family has refined since 1954.',
+        a: 'Across sixteen factories and gardens in Assam — in Dibrugarh, Jokai, and Sonari — all owned and operated by the Goenka Family Group. Every leaf is plucked, withered, and processed in-house using the CTC (Cut, Tear, Curl) method — the same approach the family has refined since 1954.',
       },
       {
         q: 'Are your gardens certified?',
-        a: 'Our gardens hold the certifications expected of a serious Indian tea producer — Tea Board of India registration, FSSAI for food safety, and additional standards for our export-bound batches. Specific certificates can be shared with buyers on request.',
+        a: 'Our gardens and factories hold the certifications required of a responsible Indian tea producer. Specific certificates can be shared with buyers on request.',
       },
     ],
   },
@@ -81,7 +77,7 @@ const FAQ_GROUPS = [
   <main>
 
     <!-- HERO -->
-    <section class="bg-white pt-20 pb-12 pat:pt-12 pat:pb-8 text-center">
+    <section class="bg-white pt-[120px] pb-12 pat:pt-12 pat:pb-8 text-center">
       <div class="max-w-[760px] mx-auto px-8">
         <p class="text-[12px] font-semibold tracking-[0.1em] uppercase text-tea-green mb-3">Frequently Asked Questions</p>
         <h1 class="text-[clamp(40px,5vw,64px)] font-bold tracking-tight leading-[1.1] text-ink mb-4">
@@ -101,7 +97,7 @@ const FAQ_GROUPS = [
 
           <!-- Sidebar TOC -->
           <aside class="sticky top-[104px] bg-white border border-[#F0F0EE] rounded-xl p-6 shadow-[0_1px_2px_rgba(14,14,14,0.03)] pat:static pat:top-auto">
-            <h6 class="text-[11px] font-semibold tracking-[0.1em] uppercase text-ink-3 mb-3.5">On this page</h6>
+            <p class="text-[11px] font-semibold tracking-[0.1em] uppercase text-ink-3 mb-3.5">On this page</p>
             <ul class="list-none m-0 p-0 flex flex-col gap-2.5 mb-5">
               {FAQ_GROUPS.map(g => (
                 <li>

@@ -25,7 +25,7 @@ const slides = [
 const specs = [
   { label: 'Form',             value: 'Granules / Powder' },
   { label: 'Processing Type',  value: 'CTC (Cut, Tear, Curl)' },
-  { label: 'Packaging Size',   value: '25 Kg' },
+  { label: 'Packaging Size',   value: '25 kg' },
   { label: 'Packaging Type',   value: 'Food grade PP Bags' },
   { label: 'Origin',           value: 'Upper Assam, India' },
 ];
@@ -39,7 +39,7 @@ const otherBrands = Array.from({ length: 4 }, (_, i) => BRANDS[(idx + i + 1) % B
 
   <main class="bg-cream">
 
-    <section class="pt-12 pb-24 pat:pt-8 pat:pb-16">
+    <section class="pt-[120px] pb-24 pat:pt-16 pat:pb-16">
       <div class="max-w-[1200px] mx-auto px-8 mob:px-4">
 
         <!-- Breadcrumb -->
@@ -144,7 +144,7 @@ const otherBrands = Array.from({ length: 4 }, (_, i) => BRANDS[(idx + i + 1) % B
 
             <!-- Description -->
             <p class="text-[18px] leading-[1.7] text-ink-2 mb-0 pat:text-center">
-              It is a high-quality tea that does not require any blending and is made by the CTC (Cut, Tear, Curl) method of processing. It has a clear color, mellow aroma, bright flavor, and lasting aftertaste.
+              It is a high-quality tea that does not require any blending and is made by the CTC (Cut, Tear, Curl) method of processing. It has a clear colour, mellow aroma, bright flavour, and lasting aftertaste.
             </p>
 
             <!-- Spec list -->
@@ -164,7 +164,7 @@ const otherBrands = Array.from({ length: 4 }, (_, i) => BRANDS[(idx + i + 1) % B
                 <p class="text-[15px] font-semibold text-ink m-0 mb-1">Interested in Buying?</p>
                 <p class="text-[13px] text-ink-3 m-0">Samples and current pricing on request.</p>
               </div>
-              <a href="/contact" class="inline-flex items-center gap-2 bg-ink text-white text-[14px] font-medium px-6 py-3 rounded-lg hover:bg-tea-dark transition-colors duration-150 no-underline shrink-0">
+              <a href={`/contact?brand=${brand.id}`} class="inline-flex items-center gap-2 bg-ink text-white text-[14px] font-medium px-6 py-3 rounded-lg hover:bg-tea-dark transition-colors duration-150 no-underline shrink-0">
                 Contact Us
               </a>
             </div>

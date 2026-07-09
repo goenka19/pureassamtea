@@ -26,7 +26,11 @@ const {
   <meta property="og:description" content={description} />
   <meta property="og:image" content="https://pureassamtea.com/images/og-image.jpg" />
   <title>{title}</title>
+  <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://pureassamtea.com/images/og-image.jpg" />
   <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="preload" as="image" href="/images/goenka-logo.png" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
