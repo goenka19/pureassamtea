@@ -16,62 +16,19 @@ The current FAQ says: *"Our gardens and factories hold the certifications requir
 
 ---
 
-## 2. Per-Brand Copy
-
-Each brand page currently shows a shared generic description:
-> "It is a high-quality tea that does not require any blending and is made by the CTC (Cut, Tear, Curl) method of processing. It has a clear colour, mellow aroma, bright flavour, and lasting aftertaste."
-
-**For each brand below, provide 2–3 sentences covering:**
-- Which buyer segment it targets (e.g. mass-market retailer, premium packeter, institutional buyer)
-- Leaf grade or liquor profile (e.g. strong thick liquor, bright amber, fine granule)
-- Any distinguishing characteristic (garden origin, blend, strength level)
-
-| Brand | Maker | Copy needed |
-|-------|-------|-------------|
-| Lalkilla | Rhino Industries | |
-| Lal Mohar | Rhino Industries | |
-| Krisnachura | Rhino Industries | |
-| Bortemto | Sainagar | |
-| Parikhet | Sainagar | |
-| Ujjal | Sainagar | |
-| Ratanpur | Ratanpur | |
-| Kakatibaree | Ratanpur | |
-| Abhoyapur | Ratanpur | |
-
----
-
-## 3. Product Photography
+## 2. Product Photography
 
 Brand detail pages currently show two placeholder landscape images (tea garden / tea pot) looped in a 4-slide carousel.
 
 **Needed per brand (or at minimum per factory group):**
-- Pack shot of the PP bag / retail pack if applicable
+- Pack shot of the PP bag
 - Product-in-context image (brewed tea, cup, garden)
 
 Until real photos are available the carousel remains with placeholders. Confirm when ready and the carousel can be updated.
 
 ---
 
-## 4. Office Postal Address (Dibrugarh)
-
-Needed for:
-- Footer "Contact" column
-- Contact page info cards
-- Organization schema in `<head>`
-
-Provide: street / area, city, pin code.
-
----
-
-## 5. Facebook Page URL
-
-The footer currently has a dead Facebook icon linking to `#`.
-
-Provide the real page URL when available, or confirm removal of the icon.
-
----
-
-## 6. Headline Differentiation
+## 3. Headline Differentiation
 
 The homepage and brands page currently have near-identical headings:
 - Homepage brands section: *"Nine names, one standard of quality."*
