@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^6.0.0",
@@ -15,10 +16,12 @@
     "autoprefixer": "^10.4.20",
     "playwright": "^1.59.1",
     "postcss": "^8.5.0",
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^3.4.17",
+    "wrangler": "^4.109.0"
   },
   "author": "Ujjwal Goenka",
   "dependencies": {
+    "@astrojs/cloudflare": "12",
     "@astrojs/sitemap": "^3.7.2"
   }
 }
